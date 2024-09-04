@@ -1,0 +1,97 @@
+:root {
+  --indian-red: #a3586d;
+  --darks-late-blue: #5c4a72;
+  --sandy-brown: #f3af5a;
+  --coral: #f4874c;
+  --tomato: #f36a4e;
+  --active-color: #45d545;
+}
+
+:root {
+  --title-font: 'Inter', sans-serif;
+  --paragraph-font: 'Baloo 2', system-ui;
+  --buttons-font: 'Roboto', system-ui;
+  --default-font-size: 1.4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#header {
+  background: var(--darks-late-blue);
+  box-shadow: 0 0 1.2rem #000;
+
+  position: fixed;
+
+  width: 100%;
+
+  display: flex;
+  padding: 2rem 6rem;
+}
+
+.wrapper-header {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wrapper-header svg {
+  width: 12rem;
+}
+
+.wrapper-header .svg-logo {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.wrapper-header .svg-logo span {
+  font-family: var(--paragraph-font);
+  font-size: var(--default-font-size);
+  color: #fafafa;
+}
+
+#nav-header {
+  border-radius: 6px;
+
+  display: flex;
+  padding: 1.2rem;
+}
+
+#ul-nav-header {
+  display: flex;
+  gap: 3rem;
+}
+
+#ul-nav-header li:hover > a,
+#ul-nav-header .active,
+#ul-nav-header .active:focus {
+  color: var(--active-color);
+}
+
+#ul-nav-header li {
+  font-family: var(--paragraph-font);
+  font-size: 1.68rem;
+}
+
+#ul-nav-header li a {
+  color: #fafafa;
+}
