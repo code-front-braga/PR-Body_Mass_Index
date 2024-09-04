@@ -8,8 +8,8 @@
 }
 
 :root {
-  --title-font: 'Inter', sans-serif;
-  --paragraph-font: 'Baloo 2', system-ui;
+  --title-font: 'Baloo 2', system-ui;
+  --paragraph-font: 'Inter', sans-serif;
   --buttons-font: 'Roboto', system-ui;
   --default-font-size: 1.4rem;
 }
@@ -23,6 +23,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 
 li {
@@ -33,11 +34,18 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
 #header {
   background: var(--darks-late-blue);
   box-shadow: 0 0 1.2rem #000;
 
   position: fixed;
+  z-index: 5;
 
   width: 100%;
 
@@ -54,7 +62,7 @@ a {
 }
 
 .wrapper-header svg {
-  width: 12rem;
+  width: 10rem;
 }
 
 .wrapper-header .svg-logo {
@@ -64,7 +72,7 @@ a {
 }
 
 .wrapper-header .svg-logo span {
-  font-family: var(--paragraph-font);
+  font-family: var(--title-font);
   font-size: var(--default-font-size);
   color: #fafafa;
 }
@@ -88,10 +96,98 @@ a {
 }
 
 #ul-nav-header li {
-  font-family: var(--paragraph-font);
+  font-family: var(--title-font);
   font-size: 1.68rem;
 }
 
 #ul-nav-header li a {
   color: #fafafa;
+}
+
+#home-page {
+  width: 100%;
+  min-height: 80vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#home-page img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+#home-page::before {
+  content: '';
+  background: color-mix(in srgb, var(--indian-red), transparent 45%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.welcome-container {
+  width: min(100%, 60vw);
+
+  display: flex;
+  padding: 1.4rem;
+
+  z-index: 3;
+}
+
+.wrapper-welcome {
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.welcome-container h1 {
+  color: #fafafa;
+
+  font-family: var(--title-font);
+  font-size: 5rem;
+  text-shadow: 0rem 0.6rem 0.6rem #00000085;
+  letter-spacing: 1rem;
+}
+
+.welcome-container h3 {
+  color: #fafafa;
+
+  font-family: var(--title-font);
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.welcome-container p {
+  color: #fafafa;
+
+  font-family: var(--title-font);
+  font-size: 1.8rem;
+  font-weight: normal;
+}
+
+.welcome-container .average-bmi-button {
+  color: #fafafa;
+  border: 2px solid var(--sandy-brown);
+  border-radius: 22px;
+  box-shadow: 0 0 2rem #00000075;
+
+  font-family: var(--buttons-font);
+
+  padding: 1.2rem 2rem;
+
+  transition: 0.4s ease-in-out;
+}
+
+.welcome-container .average-bmi-button:hover {
+  background: var(--sandy-brown);
+  color: var(--darks-late-blue);
 }

@@ -13,6 +13,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="./src/assets/images/Ab_3.svg" />
 
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
   <link rel="stylesheet" href="./src/assets/styles/styles.css" />
 
   <title>Body Mass Index (BMI)</title>
@@ -74,11 +76,29 @@
 
   <main class="main">
     <section id="home-page">
-      <img src="" alt="">
+      <img src="./src/assets/images/bg-home.jpg"
+        alt="Na imagem tem maçãs, anilha de acadêmia, fita métrica e um pimentão amarelo." data-aos="fade-zoom-in"
+        data-aos-delay="100" data-aos-offset="500">
+
+      <div class="welcome-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="wrapper-welcome">
+          <h1>Bem-Vindo!</h1>
+          <h3>Descubra dicas sobre alimentação e exercícios para melhorar sua qualidade de vida.</h3>
+          <p>E olha que legal! Clique no botão abaixo para acessar nossa calculadora de Índice de Massa Corporal (IMC).
+          </p>
+
+          <button class="average-bmi-button">CALCULAR IMC</button>
+        </div>
+      </div>
 
     </section>
+
+    <section id="food-page"></section>
   </main>
 
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <script src="./src/assets/scripts/aosInit.js"></script>
   <script type="module" src="./dist/js/index.js"></script>
 </body>
 
