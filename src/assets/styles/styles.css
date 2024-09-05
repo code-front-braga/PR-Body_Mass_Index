@@ -46,7 +46,7 @@ button {
 }
 
 section {
-  padding: 6rem 0;
+  padding: 4rem 2.4rem;
   scroll-margin-top: 7.12rem;
   overflow: clip;
 }
@@ -191,7 +191,7 @@ section {
   color: #fffafa;
   border: 2px solid var(--sandy-brown);
   border-radius: 22px;
-  box-shadow: 0 0 2rem #00000075;
+  box-shadow: 0 0 2rem #0c0c0c;
 
   font-family: var(--buttons-font);
 
@@ -208,13 +208,16 @@ section {
 /* Food Page */
 #food-page {
   width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper-food-page {
   margin: auto;
 
   width: min(100%, 95vw);
-  height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -233,7 +236,7 @@ section {
 }
 
 .info-food-page-container img {
-  filter: drop-shadow(0 1.6rem 2.8rem var(--darks-late-blue));
+  filter: drop-shadow(0 1.2rem 2rem #0c0c0c);
 
   width: 50rem;
 }
@@ -241,19 +244,20 @@ section {
 .info-food-page-container .text-content p {
   font-family: var(--paragraph-font);
   font-size: 1.6rem;
+  text-align: justify;
   line-height: 2.6rem;
 }
 
 /* Food Benefits */
 #food-benefits {
   width: 100%;
-  margin-top: -12rem;
-
-  padding: 0 2.8rem 2.6rem 2.8rem;
 }
 
 .wrapper-food-benefits {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
 }
 
 .wrapper-food-benefits h2 {
@@ -265,84 +269,49 @@ section {
 .box-cards-of-foods {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  place-items: center;
-  gap: 4rem;
-  margin-top: 12rem;
+  gap: 5rem;
 }
 
 .food-cards {
-  background: var(--coral);
-  border-radius: 26px;
-  box-shadow: 0 1.2rem 1rem #00000050;
+  background: var(--darks-late-blue);
+  border-radius: 16px;
+  box-shadow: 0 1.4rem 2.8rem #0c0c0c;
 
-  width: min(100%, 40vw);
-  height: 35rem;
+  width: 100%;
+
+  text-align: center;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 0 2rem;
+  gap: 1rem;
 }
 
 .food-cards p {
+  background: var(--coral);
   color: #fffafa;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
 
-  position: relative;
-  top: -4rem;
-
-  font-family: var(--paragraph-font);
-  font-size: 1.6rem;
-  line-height: 1.9rem;
-  text-align: center;
-}
-
-.food-cards img {
-  border-radius: 10px;
-  filter: drop-shadow(1rem 1.2rem 1.2rem var(--darks-late-blue));
-
-  width: 18rem;
-
-  position: relative;
-  top: -6rem;
-}
-
-#exercise-page {
   width: 100%;
-  min-height: 100vh;
-}
+  height: 100%;
 
-.wrapper-exercise-page {
-  margin: auto;
-
-  width: min(100%, 95vw);
-  height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-.wrapper-exercise-page h2 {
-  font-family: var(--title-font);
-  font-size: 3.8rem;
-  font-weight: normal;
-}
-
-.info-exercise-page-container {
-  display: flex;
-  align-items: center;
-}
-
-.info-exercise-page-container img {
-  filter: drop-shadow(0 1.6rem 2.8rem var(--darks-late-blue));
-
-  width: 50rem;
-}
-
-.info-exercise-page-container .text-content p {
   font-family: var(--paragraph-font);
-  font-size: 1.6rem;
-  line-height: 2.6rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+
+  padding: 1.4rem;
+}
+
+.box-cards-of-foods img {
+  border-radius: 4px;
+  filter: drop-shadow(0 0rem 1.6rem #000);
+
+  width: 12rem;
+  height: 12rem;
+
+  margin-top: -6rem;
+
+  padding: 1.2rem;
 }
