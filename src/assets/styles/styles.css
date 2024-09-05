@@ -12,6 +12,7 @@
   --paragraph-font: 'Inter', sans-serif;
   --buttons-font: 'Roboto', system-ui;
   --default-font-size: 1.4rem;
+  --header-height: 7.12rem;
 }
 
 * {
@@ -26,6 +27,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: #fffafa;
+}
+
 li {
   list-style-type: none;
 }
@@ -38,6 +43,11 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+}
+
+section {
+  padding: 6rem 0;
+  scroll-margin-top: 7.12rem;
 }
 
 #header {
@@ -74,7 +84,7 @@ button {
 .wrapper-header .svg-logo span {
   font-family: var(--title-font);
   font-size: var(--default-font-size);
-  color: #fafafa;
+  color: #fffafa;
 }
 
 #nav-header {
@@ -101,12 +111,14 @@ button {
 }
 
 #ul-nav-header li a {
-  color: #fafafa;
+  color: #fffafa;
 }
+
+/* Home Page */
 
 #home-page {
   width: 100%;
-  min-height: 80vh;
+  min-height: 75vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -150,7 +162,7 @@ button {
 }
 
 .welcome-container h1 {
-  color: #fafafa;
+  color: #fffafa;
 
   font-family: var(--title-font);
   font-size: 5rem;
@@ -159,7 +171,7 @@ button {
 }
 
 .welcome-container h3 {
-  color: #fafafa;
+  color: #fffafa;
 
   font-family: var(--title-font);
   font-size: 2rem;
@@ -167,7 +179,7 @@ button {
 }
 
 .welcome-container p {
-  color: #fafafa;
+  color: #fffafa;
 
   font-family: var(--title-font);
   font-size: 1.8rem;
@@ -175,7 +187,7 @@ button {
 }
 
 .welcome-container .average-bmi-button {
-  color: #fafafa;
+  color: #fffafa;
   border: 2px solid var(--sandy-brown);
   border-radius: 22px;
   box-shadow: 0 0 2rem #00000075;
@@ -190,4 +202,91 @@ button {
 .welcome-container .average-bmi-button:hover {
   background: var(--sandy-brown);
   color: var(--darks-late-blue);
+}
+
+/* Food Page */
+#food-page {
+  width: 100%;
+}
+
+.wrapper-food-page {
+  margin: auto;
+
+  width: min(100%, 95vw);
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper-food-page h2 {
+  font-family: var(--title-font);
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+}
+
+.info-container img {
+  width: 50rem;
+}
+
+.info-container .text-content p {
+  font-family: var(--paragraph-font);
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
+
+.food-colors-and-benefits {
+  padding-top: 6rem;
+  text-align: center;
+}
+
+.box-cards-of-foods {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 4rem;
+  margin-top: 12rem;
+}
+
+.food-cards {
+  background: var(--indian-red);
+  border-radius: 26px;
+  box-shadow: 0 0 1.4rem #00000075;
+
+  width: min(100%, 40vw);
+  height: 35rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.food-cards p {
+  color: #fffafa;
+
+  position: relative;
+  top: -4rem;
+
+  font-family: var(--paragraph-font);
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  text-align: center;
+}
+
+.food-cards img {
+  border-radius: 10px;
+  filter: drop-shadow(0 1rem 2rem var(--sandy-brown));
+
+  width: 18rem;
+
+  position: relative;
+  top: -6rem;
 }

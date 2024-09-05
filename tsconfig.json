@@ -6,5 +6,5 @@
     "outDir": "dist/js",
     "strict": true
   },
-  "include": ["src/assets/scripts/**/*"]
+  "include": ["src/assets/scripts/ts/**/*"]
 }
