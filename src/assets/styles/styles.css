@@ -48,6 +48,7 @@ button {
 section {
   padding: 6rem 0;
   scroll-margin-top: 7.12rem;
+  overflow: clip;
 }
 
 #header {
@@ -222,28 +223,43 @@ section {
 
 .wrapper-food-page h2 {
   font-family: var(--title-font);
-  font-size: 3rem;
+  font-size: 3.8rem;
   font-weight: normal;
 }
 
-.info-container {
+.info-food-page-container {
   display: flex;
   align-items: center;
 }
 
-.info-container img {
+.info-food-page-container img {
+  filter: drop-shadow(0 1.6rem 2.8rem var(--darks-late-blue));
+
   width: 50rem;
 }
 
-.info-container .text-content p {
+.info-food-page-container .text-content p {
   font-family: var(--paragraph-font);
   font-size: 1.6rem;
   line-height: 2.6rem;
 }
 
-.food-colors-and-benefits {
-  padding-top: 6rem;
+/* Food Benefits */
+#food-benefits {
+  width: 100%;
+  margin-top: -12rem;
+
+  padding: 0 2.8rem 2.6rem 2.8rem;
+}
+
+.wrapper-food-benefits {
   text-align: center;
+}
+
+.wrapper-food-benefits h2 {
+  font-family: var(--title-font);
+  font-size: 3.8rem;
+  font-weight: normal;
 }
 
 .box-cards-of-foods {
@@ -255,9 +271,9 @@ section {
 }
 
 .food-cards {
-  background: var(--indian-red);
+  background: var(--coral);
   border-radius: 26px;
-  box-shadow: 0 0 1.4rem #00000075;
+  box-shadow: 0 1.2rem 1rem #00000050;
 
   width: min(100%, 40vw);
   height: 35rem;
@@ -283,10 +299,50 @@ section {
 
 .food-cards img {
   border-radius: 10px;
-  filter: drop-shadow(0 1rem 2rem var(--sandy-brown));
+  filter: drop-shadow(1rem 1.2rem 1.2rem var(--darks-late-blue));
 
   width: 18rem;
 
   position: relative;
   top: -6rem;
+}
+
+#exercise-page {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.wrapper-exercise-page {
+  margin: auto;
+
+  width: min(100%, 95vw);
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.wrapper-exercise-page h2 {
+  font-family: var(--title-font);
+  font-size: 3.8rem;
+  font-weight: normal;
+}
+
+.info-exercise-page-container {
+  display: flex;
+  align-items: center;
+}
+
+.info-exercise-page-container img {
+  filter: drop-shadow(0 1.6rem 2.8rem var(--darks-late-blue));
+
+  width: 50rem;
+}
+
+.info-exercise-page-container .text-content p {
+  font-family: var(--paragraph-font);
+  font-size: 1.6rem;
+  line-height: 2.6rem;
 }
