@@ -17,7 +17,7 @@
   --paragraph-font: 'Inter', sans-serif;
   --buttons-font: 'Roboto', system-ui;
   --default-font-size: 1.4rem;
-  --header-height: 7.12rem;
+  --header-height: 6.32rem;
 }
 
 * {
@@ -53,7 +53,7 @@ button {
 section {
   width: 100%;
   padding: 4rem 2.4rem;
-  scroll-margin-top: 7.12rem;
+  scroll-margin-top: var(--header-height);
   overflow: clip;
 }
 
@@ -98,7 +98,7 @@ section {
   border-radius: 6px;
 
   display: flex;
-  padding: 1.2rem;
+  padding: .8rem;
 }
 
 #ul-nav-header {
@@ -209,6 +209,10 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
+}
+
+#food-page {
+  min-height: 100vh;
 }
 
 .food-page-wrapper,
