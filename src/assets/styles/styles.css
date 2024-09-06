@@ -1,3 +1,8 @@
+/* Ajustes Futuros
+* Reduzir linhas de códigos;
+* Criar classes auxiliares;
+*/
+
 :root {
   --indian-red: #a3586d;
   --darks-late-blue: #5c4a72;
@@ -46,6 +51,7 @@ button {
 }
 
 section {
+  width: 100%;
   padding: 4rem 2.4rem;
   scroll-margin-top: 7.12rem;
   overflow: clip;
@@ -153,15 +159,6 @@ section {
   z-index: 3;
 }
 
-.wrapper-welcome {
-  margin: auto;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
 .welcome-container h1 {
   color: #fffafa;
 
@@ -187,7 +184,7 @@ section {
   font-weight: normal;
 }
 
-.welcome-container .average-bmi-button {
+.welcome-container .bmi-button {
   color: #fffafa;
   border: 2px solid var(--sandy-brown);
   border-radius: 22px;
@@ -200,118 +197,129 @@ section {
   transition: 0.4s ease-in-out;
 }
 
-.welcome-container .average-bmi-button:hover {
+.welcome-container .bmi-button:hover {
   background: var(--sandy-brown);
   color: var(--darks-late-blue);
 }
 
-/* Food Page */
-#food-page {
-  width: 100%;
+.welcome-wrapper {
+  margin: auto;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 2rem;
 }
 
-.wrapper-food-page {
+.food-page-wrapper,
+.exercise-page-wrapper {
   margin: auto;
 
   width: min(100%, 95vw);
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
-.wrapper-food-page h2 {
+.food-page-wrapper h2,
+.exercise-page-wrapper h2 {
   font-family: var(--title-font);
-  font-size: 3.8rem;
+  font-size: 2.8rem;
   font-weight: normal;
 }
 
-.info-food-page-container {
+.food-info-container,
+.exercise-info-container {
+  margin-top: 2rem;
+
   display: flex;
   align-items: center;
 }
 
-.info-food-page-container img {
+.food-info-container img,
+.exercise-info-container img {
   filter: drop-shadow(0 1.2rem 2rem #0c0c0c);
 
-  width: 50rem;
+  width: 40rem;
 }
 
-.info-food-page-container .text-content p {
+:is(.food-info-container, .exercise-info-container) .text-content p {
   font-family: var(--paragraph-font);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   text-align: justify;
   line-height: 2.6rem;
 }
 
-/* Food Benefits */
-#food-benefits {
-  width: 100%;
-}
+.food-benefits-wrapper,
+.exercise-benefits-wrapper {
+  margin-top: 4rem;
 
-.wrapper-food-benefits {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8rem;
+  gap: 6rem;
 }
 
-.wrapper-food-benefits h2 {
+.food-benefits-wrapper h2,
+.exercise-benefits-wrapper h2 {
   font-family: var(--title-font);
-  font-size: 3.8rem;
+  font-size: 2.8rem;
   font-weight: normal;
 }
 
-.box-cards-of-foods {
+.food-cards-container,
+.exercise-cards-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5rem;
+  column-gap: 5rem;
+  row-gap: 8rem;
 }
 
-.food-cards {
+.food-cards,
+.exercise-cards {
   background: var(--darks-late-blue);
   border-radius: 16px;
-  box-shadow: 0 1.4rem 2.8rem #0c0c0c;
+  box-shadow: 0 1rem 3rem #0c0c0c;
 
   width: 100%;
 
-  text-align: center;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.food-cards p {
-  background: var(--coral);
-  color: #fffafa;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
-
-  width: 100%;
-  height: 100%;
-
-  font-family: var(--paragraph-font);
-  font-size: 1.5rem;
-  line-height: 2rem;
   text-align: center;
 
   padding: 1.4rem;
 }
 
-.box-cards-of-foods img {
+.exercise-cards {
+  background: var(--sandy-brown);
+}
+
+.food-cards p,
+.exercise-cards p {
+  color: #fffafa;
+
+  width: 100%;
+
+  font-family: var(--paragraph-font);
+  font-size: 1.6rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.exercise-cards p {
+  color: #0c0c0c;
+}
+
+.food-cards-container img,
+.exercise-cards-container img {
   border-radius: 4px;
-  filter: drop-shadow(0 0rem 1.6rem #000);
+  filter: drop-shadow(0 1.4rem 1.2rem var(--sandy-brown));
 
-  width: 12rem;
-  height: 12rem;
+  width: 14rem;
+  height: 14rem;
 
-  margin-top: -6rem;
+  margin-top: -8rem;
 
   padding: 1.2rem;
+}
+
+.exercise-cards-container img {
+  filter: drop-shadow(0 1.4rem 1.2rem var(--darks-late-blue));
 }
