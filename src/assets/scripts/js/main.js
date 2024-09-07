@@ -42,3 +42,35 @@ function navMenuScrollSpy() {
 }
 window.addEventListener('load', navMenuScrollSpy);
 document.addEventListener('scroll', navMenuScrollSpy);
+
+/*Animations's Manipulation */
+
+const submitButton = document.querySelector('.submit-button');
+const formContainer = document.querySelector('.bmi-page-wrapper form');
+const infoBMI = document.querySelector('.bmi-info-container');
+
+const closeBMIInfo = document.querySelector('.close-bmi-info');
+
+submitButton.addEventListener('click', () => {
+  formContainer.classList.add('hide-form');
+});
+
+formContainer.addEventListener('transitionend', () => {
+  if (formContainer.classList.contains('hide-form')) {
+    infoBMI.classList.add('show-info');
+  }
+});
+
+closeBMIInfo.addEventListener('click', () => {
+  infoBMI.classList.remove('show-info');
+  formContainer.classList.remove('hide-form');
+})
+
+// const genderButtons = document.querySelectorAll('.gender-container button');
+
+// genderButtons.forEach(button => {
+//   button.addEventListener('click', () => {
+//     if (button.classList.contains('male-button')) console.log('Masculino');
+//     if (button.classList.contains('female-button')) console.log('Feminino');
+//   });
+// });
