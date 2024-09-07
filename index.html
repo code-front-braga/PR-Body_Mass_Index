@@ -295,23 +295,22 @@
         <form class="form d-flex-center">
           <h3>Calcule o seu Índice de Massa Corporal (IMC)</h3>
 
-          <div class="gender-content d-flex-center">
-            <input type="submit" value="Masculino" class="male-gender light-background-color" name="male-gender-input">
-            <input type="submit" value="Feminino" class="female-gender light-background-color"
-              name="female-gender-input">
-          </div>
-
           <div class="name-content">
-            <input type="text" name="input-name" id="user-name" placeholder="seu nome">
+            <input type="text" name="input-name" id="user-name" class="light-background-color" placeholder="seu nome"
+              required>
           </div>
           <div class="height-content">
-            <input type="number" name="input-height" id="user-height" placeholder="sua altura">
+            <label for="user-height">cm</label>
+            <input type="number" name="input-height" id="user-height" class="light-background-color"
+              placeholder="sua altura ex: 166" required>
           </div>
           <div class="weight-content">
-            <input type="number" name="input-weight" id="user-weight" placeholder="seu peso">
+            <label for="user-weight">kg</label>
+            <input type="number" name="input-weight" id="user-weight" class="light-background-color"
+              placeholder="seu peso ex.: 70" required>
           </div>
 
-          <button class="send-form-button light-background-color" type="submit">Enviar</button>
+          <button class="send-form-button light-background-color" type="submit" disabled>Enviar</button>
         </form>
 
         <div class="bmi-info-container d-flex">
@@ -319,52 +318,16 @@
             <i class="bi bi-arrow-left-short"></i>
           </button>
 
-          <h2 class="subtitle-font-default">Olá, Leonardo!</h2>
+          <h2 class="subtitle-font-default">Olá, <span>Leonardo!</span></h2>
 
           <header class="header-result-container">
-            <h3>Cuidado! Você está abaixo do peso.</h3>
-            <span>Seu IMC é de 20Kg/M²</span>
+            <h2 class="subtitle-font-default"></h2>
+            <h3>Seu IMC é de <span></span>Kg/M²</h3>
           </header>
 
           <div class="tips-content">
-            <h3>Separei algumas dicas para você:</h3>
-
-            <p>
-              <strong>Aumente a ingestão calórica:</strong> Consuma mais calorias do que você gasta. Inclua alimentos
-              ricos em nutrientes e calorias, como abacate, nozes, sementes, queijos e azeite de oliva.
-            </p>
-            <br>
-            <p><strong>Coma com mais frequência:</strong> Faça várias refeições pequenas ao longo do dia, em vez de três
-              grandes refeições. Isso pode ajudar a aumentar a ingestão calórica sem se sentir muito cheio.
-            </p>
-            <br>
-            <p><strong>Inclua proteínas em todas as refeições:</strong> As proteínas são essenciais para o crescimento
-              muscular e a manutenção do corpo. Boas fontes incluem carnes magras, ovos, leite, queijo, leguminosas e
-              nozes.
-            </p>
-            <br>
-            <p><strong>Escolha carboidratos complexos:</strong> Opte por carboidratos saudáveis como batata-doce, arroz
-              integral, quinoa e aveia. Eles fornecem energia sustentada e são ricos em nutrientes.
-            </p>
-            <br>
-            <p><strong>Pratique exercícios de resistência:</strong> Exercícios como levantamento de peso podem ajudar a
-              ganhar massa muscular, o que contribui para o ganho de peso saudável.
-            </p>
-            <br>
-            <p><strong>Evite calorias vazias:</strong> Evite alimentos ricos em açúcar e gordura saturada, como
-              refrigerantes, doces e frituras. Eles podem levar a problemas de saúde sem fornecer os nutrientes
-              necessários.
-            </p>
-            <br>
-            <p><strong>Hidrate-se bem:</strong> Beba bastante água, mas evite beber grandes quantidades antes das
-              refeições
-              para não reduzir o apetite.
-            </p>
-            <br>
-            <p><strong>Consulte um profissional de saúde:</strong> Um nutricionista pode ajudar a criar um plano
-              alimentar
-              personalizado e garantir que você está ganhando peso de forma saudável.
-            </p>
+            <h2 class="subtitle-font-default">Separei algumas dicas para você:</h2>
+            <p></p>
           </div>
         </div>
 

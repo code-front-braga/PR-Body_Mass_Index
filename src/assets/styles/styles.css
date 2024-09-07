@@ -6,6 +6,8 @@
   --coral: #f4874c;
   --tomato: #f36a4e;
   --active-color: #45d545;
+  --ivory-color: #fffff0;
+  --nero-color: #171717;
 
   /* Fonts */
   --primary-font: 'Baloo 2', system-ui;
@@ -81,8 +83,8 @@ span {
 }
 
 .light-background-color {
-  --ivory-color: #fffff0;
-  --nero-color: #171717;
+  background: var(--ivory-color);
+  color: var(--nero-color);
 }
 
 .d-flex-center {
@@ -360,24 +362,6 @@ span {
   transition: 2s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.form .gender-content {
-  width: 100%;
-
-  gap: 2.8rem;
-}
-
-.gender-content input {
-  background: var(--ivory-color);
-  border-radius: 6px;
-  box-shadow: 0 0 0.4rem var(--nero-color);
-
-  font-family: var(--primary-font);
-  font-size: var(--default-font-size);
-
-  width: min(100%, 10rem);
-  height: 4rem;
-}
-
 .form h3 {
   color: var(--ivory-color);
 
@@ -389,6 +373,17 @@ span {
 .height-content,
 .weight-content {
   width: min(100%, 30rem);
+
+  position: relative;
+}
+
+:is(.height-content, .weight-content) label {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+
+  font-family: var(--primary-font);
+  font-size: 1.4rem;
 }
 
 .form input:not(input[type='submit']) {
@@ -414,6 +409,13 @@ span {
   height: 5rem;
 }
 
+.send-form-button:disabled {
+  background: rgb(255, 0, 0);
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
 .bmi-info-container {
   background: linear-gradient(62deg, var(--darks-late-blue) 10%, var(--indian-red));
   color: var(--ivory-color);
@@ -431,6 +433,12 @@ span {
   padding: 1.4rem;
 
   transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.bmi-info-container h2 span {
+  font-family: var(--primary-font);
+  font-size: 2.8rem;
+  font-weight: normal;
 }
 
 .bmi-info-container h3 {
@@ -473,7 +481,7 @@ span {
   overflow: auto;
 }
 
-.tips-content h3 {
+.tips-content h2 {
   margin-bottom: 2.6rem;
 }
 
