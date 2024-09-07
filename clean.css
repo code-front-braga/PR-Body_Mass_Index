@@ -198,12 +198,11 @@ span {
   color: var(--ivory-color);
 
   font-family: var(--primary-font);
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: normal;
 }
 
 .welcome-wrapper .go-to-bmi-button {
-  background: transparent;
   color: var(--ivory-color);
   border: 2px solid var(--sandy-brown);
   border-radius: 6px;
@@ -236,7 +235,7 @@ span {
 
 .food-info-container,
 .exercise-info-container {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 :is(.food-info-container, .exercise-info-container) img {
@@ -246,8 +245,8 @@ span {
   width: 40rem;
 }
 
-:is(.food-info-container, .exercise-info-container) p {
-  color: var(--nero-color);
+:is(.food-info-container, .exercise-info-container) .text-content p {
+  color: var(--ivory-color);
 
   font-family: var(--secondary-font);
   font-size: 1.8rem;
@@ -301,7 +300,9 @@ span {
   border-radius: 4px;
   filter: drop-shadow(0 1.4rem 1.2rem var(--sandy-brown));
 
-  width: 14rem;
+  object-fit: cover;
+
+  width: (100%, 14rem);
   height: 14rem;
 
   margin-top: -8rem;
@@ -361,21 +362,7 @@ span {
 }
 
 .form .gender-content {
-  width: 100%;
-
-  gap: 2.8rem;
-}
-
-.gender-content input {
-  background: var(--ivory-color);
-  border-radius: 6px;
-  box-shadow: 0 0 0.4rem var(--nero-color);
-
-  font-family: var(--primary-font);
-  font-size: var(--default-font-size);
-
-  width: min(100%, 10rem);
-  height: 4rem;
+  gap: 2.6rem;
 }
 
 .form h3 {
@@ -439,13 +426,7 @@ span {
 }
 
 .close-bmi-info {
-  background: var(--ivory-color);
-  border-radius: 4px;
-
-  font-size: 2rem;
-
   width: 4rem;
-  height: 4rem;
 
   position: absolute;
   top: 2rem;
@@ -454,17 +435,13 @@ span {
   z-index: 0;
 }
 
-.header-result-container {
-  text-align: center;
+.close-bmi-info img {
+  border-radius: 4px;
 }
 
 .header-result-container h3 {
   font-family: var(--primary-font);
   font-size: 2rem;
-}
-
-.header-result-container span {
-  font-size: 2.8rem;
 }
 
 .tips-content {

@@ -14,17 +14,19 @@
   <link rel="icon" href="./src/assets/images/Ab_3.svg" />
 
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <link rel="stylesheet" href="./src/assets/styles/styles.css" />
 
   <title>Body Mass Index (BMI)</title>
 </head>
 
-<body>
-  <header id="header">
-    <div class="wrapper-header">
-      <div class="svg-logo">
+<body class="light-background-color">
+  <header id="header" class="d-flex">
+    <div class="header-wrapper">
+      <div class="svg-logo-content d-flex-center">
         <span>Developed by</span>
+
         <a href="https://github.com/code-front-braga" target="_blank">
           <?xml version="1.0" encoding="utf-8"?>
           <svg viewBox="148.0249 176.2958 234.6202 82.8544" xmlns="http://www.w3.org/2000/svg">
@@ -63,8 +65,8 @@
       </div>
 
 
-      <nav id="nav-header">
-        <ul id="ul-nav-header">
+      <nav id="header-nav" class="d-flex">
+        <ul id="header-ul-nav" class="d-flex-center">
           <li><a href="#home-page" class="active-link">Página Inicial</a></li>
           <li><a href="#food-page">Alimentação</a></li>
           <li><a href="#exercise-page">Exercícios</a></li>
@@ -75,19 +77,20 @@
   </header>
 
   <main class="main">
-    <section id="home-page">
+    <section id="home-page" class="d-flex-center">
       <img src="./src/assets/images/bg-home.jpg"
         alt="Na imagem tem maçãs, anilha de acadêmia, fita métrica e um pimentão amarelo." data-aos="fade-zoom-in"
         data-aos-delay="100" data-aos-offset="500">
 
-      <div class="welcome-container" data-aos="fade-up" data-aos-delay="100">
-        <div class="welcome-wrapper">
-          <h1>Bem-Vindo!</h1>
+      <div class="welcome-container d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="welcome-wrapper d-flex">
+          <h1 class="title-font-default">Bem-Vindo!</h1>
           <h3>Descubra dicas sobre alimentação e exercícios para melhorar sua qualidade de vida.</h3>
-          <p>E olha que legal! Clique no botão abaixo para acessar nossa calculadora de Índice de Massa Corporal (IMC).
+          <p class="paragraph-font-default">E olha que legal! Clique no botão abaixo para acessar nossa calculadora de
+            Índice de Massa Corporal.
           </p>
 
-          <a href="#bmi-page"><button class="bmi-button">CALCULAR IMC</button></a>
+          <a href="#bmi-page"><button class="go-to-bmi-button">CALCULAR IMC</button></a>
         </div>
       </div>
 
@@ -95,13 +98,13 @@
 
     <section id="food-page">
       <div class="food-page-wrapper">
-        <h2>Como está a sua alimentação ?</h2>
+        <h2 class="subtitle-font-default">Como está a sua alimentação ?</h2>
 
-        <div class="food-info-container">
+        <div class="food-info-container d-flex-center">
           <img src="./src/assets/images/bg-food.webp" loading="lazy"
             alt="Um prato com frutas, verduras e legumes bem colorido.">
 
-          <div class="text-content">
+          <div>
             <p>A alimentação é um dos pilares fundamentais para a manutenção da saúde e bem-estar. No entanto, com a
               correria do dia a dia, muitas vezes não damos a devida atenção ao que consumimos. É essencial refletir
               sobre nossos hábitos alimentares e fazer ajustes necessários para garantir uma dieta equilibrada e
@@ -125,12 +128,12 @@
           </div>
         </div>
 
-        <div class="food-benefits-wrapper">
-          <h2>Cores dos alimentos e seus benefícios !</h2>
+        <div class="food-benefits-container d-flex">
+          <h2 class="subtitle-font-default">Cores dos alimentos e seus benefícios !</h2>
 
-          <div class="food-cards-container">
+          <div class="food-benefits-cards-container d-grid-columns-4">
 
-            <div class="food-card-green food-cards" data-aos="fade-up" data-aos-delay="100">
+            <div class="green-food-card food-cards" data-aos="fade-up" data-aos-delay="100">
               <img src="./src/assets/images/green-food.webp" loading="lazy" alt="Image de um couve">
 
               <p>Alface de todos os tipos, brócolis, pimentão verde, couve, espinafre, escarola, agrião, rúcula,
@@ -139,7 +142,7 @@
                 essenciais ao corpo, como a vitamina A e o ferro, por exemplo.</p>
             </div>
 
-            <div class="food-card-yellow-orange food-cards" data-aos="fade-up" data-aos-delay="200">
+            <div class="yellow-orange-food-card food-cards" data-aos="fade-up" data-aos-delay="200">
               <img src="./src/assets/images/orange-food.webp" loading="lazy" alt="Imagem de uma laranja">
 
               <p>Cenoura, abóbora, pimentão amarelo, mamão, manga, laranja, pêssego, damasco… os vegetais e as frutas
@@ -148,7 +151,7 @@
                 ótimas fontes de vitamina C, um poderoso antioxidante.</p>
             </div>
 
-            <div class="food-card-red food-cards" data-aos="fade-up" data-aos-delay="300">
+            <div class="red-food-card food-cards" data-aos="fade-up" data-aos-delay="300">
               <img src="./src/assets/images/red-food.webp" loading="lazy" alt="Imagem de uma maçã">
 
               <p>Tomate, pimentão vermelho, morango, melancia, caqui, goiaba, framboesa… essa cor forte e vibrante
@@ -156,7 +159,7 @@
                 importantes aliados na prevenção de doenças e na manutenção da memória e da cognição.</p>
             </div>
 
-            <div class="food-card-purple food-cards" data-aos="fade-up" data-aos-delay="400">
+            <div class="purple-food-card food-cards" data-aos="fade-up" data-aos-delay="400">
               <img src="./src/assets/images/purple-food.webp" loading="lazy" alt="Imagem de um cacho de uvas">
 
               <p>Beterraba, repolho roxo, alcachofra, jabuticaba, uva, ameixa, figo… esses alimentos, bonitos por
@@ -171,13 +174,13 @@
 
     <section id="exercise-page">
       <div class="exercise-page-wrapper">
-        <h2>Faça atividades físicas !</h2>
+        <h2 class="subtitle-font-default">Faça atividades físicas !</h2>
 
-        <div class="exercise-info-container">
+        <div class="exercise-info-container d-flex-center">
           <img src="./src/assets/images/bg-exercise.webp" loading="lazy" data-aos="zoom-in" data-aos-delay="0"
             data-aos-offset="0" alt="Uma imagem com duas anilhas de acadêmia e uma fita métrica.">
 
-          <div class="text-content" data-aos="fade-left" data-aos-offset="500" data-aos-duration="600">
+          <div data-aos="fade-left" data-aos-offset="500" data-aos-duration="600">
             <p>A
               prática regular de atividade física é essencial para manter um estilo de vida saudável e equilibrado.
               Além de contribuir para a saúde física, os exercícios também desempenham um papel crucial no bem-estar
@@ -206,10 +209,10 @@
           </div>
         </div>
 
-        <div class="exercise-benefits-wrapper">
-          <h2>Exercite-se !</h2>
+        <div class="exercise-benefits-container d-flex">
+          <h2 class="subtitle-font-default">Exercite-se !</h2>
 
-          <div class="exercise-cards-container">
+          <div class="exercise-benefits-cards-container d-grid-columns-4">
 
             <div class="walk-card exercise-cards" data-aos="fade-up" data-aos-delay="100">
               <img src="./src/assets/images/walk.webp" alt="Ilustração de dois idosos andando">
@@ -284,46 +287,47 @@
       </div>
     </section>
 
-    <section id="bmi-page">
-      <div class="bmi-page-wrapper">
+    <section id="bmi-page" class="d-flex">
+      <div class="bmi-page-wrapper d-flex">
+        <img class="bg-bmi-form" src="./src/assets/images/bg-bmi.webp"
+          alt="Ilustração de um garfo sefurando verduras e legumes">
 
-        <img class="bg-bmi-form" src="./src/assets/images/bg-bmi.webp" alt="Ilustração de um grupo de amigos jantando">
-
-        <form>
+        <form class="form d-flex-center">
           <h3>Calcule o seu Índice de Massa Corporal (IMC)</h3>
 
-          <div class="gender-container">
-            <button class="male-button">Masculino</button>
-            <button class="female-button">Feminino</button>
+          <div class="gender-content d-flex-center">
+            <input type="submit" value="Masculino" class="male-gender light-background-color" name="male-gender-input">
+            <input type="submit" value="Feminino" class="female-gender light-background-color"
+              name="female-gender-input">
           </div>
 
-          <div class="name-container">
+          <div class="name-content">
             <input type="text" name="input-name" id="user-name" placeholder="seu nome">
           </div>
-          <div class="height-container">
+          <div class="height-content">
             <input type="number" name="input-height" id="user-height" placeholder="sua altura">
           </div>
-          <div class="weight-container">
+          <div class="weight-content">
             <input type="number" name="input-weight" id="user-weight" placeholder="seu peso">
           </div>
 
-          <button class="submit-button" type="submit">Enviar</button>
+          <button class="send-form-button light-background-color" type="submit">Enviar</button>
         </form>
 
-        <div class="bmi-info-container">
-          <button class="close-bmi-info">
-            <img src="./src/assets/images/arrow-left.png" alt="Seta apontando para a esquerda">
+        <div class="bmi-info-container d-flex">
+          <button class="close-bmi-info d-flex-center">
+            <i class="bi bi-arrow-left-short"></i>
           </button>
 
-          <h2>Olá, Leonardo!</h2>
+          <h2 class="subtitle-font-default">Olá, Leonardo!</h2>
 
-          <div class="result-container">
+          <header class="header-result-container">
             <h3>Cuidado! Você está abaixo do peso.</h3>
             <span>Seu IMC é de 20Kg/M²</span>
-          </div>
+          </header>
 
-          <div class="tips-container">
-            <h4>Separei algumas dicas para você:</h4>
+          <div class="tips-content">
+            <h3>Separei algumas dicas para você:</h3>
 
             <p>
               <strong>Aumente a ingestão calórica:</strong> Consuma mais calorias do que você gasta. Inclua alimentos
@@ -362,9 +366,10 @@
               personalizado e garantir que você está ganhando peso de forma saudável.
             </p>
           </div>
-
-
         </div>
+
+
+      </div>
       </div>
     </section>
   </main>

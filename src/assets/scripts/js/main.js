@@ -11,7 +11,7 @@ window.addEventListener('load', aosInit);
 aosInit();
 
 /* Links */
-let navMenuLinks = document.querySelectorAll('#ul-nav-header li a');
+let navMenuLinks = document.querySelectorAll('#header-ul-nav li a');
 
 navMenuLinks.forEach(currentLink => {
   currentLink.addEventListener('click', () => {
@@ -23,7 +23,7 @@ navMenuLinks.forEach(currentLink => {
 /* Scroll */
 function navMenuScrollSpy() {
   navMenuLinks.forEach(navMenuLink => {
-    if (!navMenuLink.hash) return;
+    if (!navMenuLink.hash) return; //
 
     let section = document.querySelector(navMenuLink.hash);
 
@@ -32,21 +32,22 @@ function navMenuScrollSpy() {
     let position = window.scrollY + 200;
 
     if (position >= section.offsetTop && position <= section.offsetTop + section.offsetHeight) {
-      document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
+      document.querySelectorAll('#header-ul-nav a.active-link').forEach(link => link.classList.remove('active-link'));
 
-      navMenuLink.classList.add('active');
+      navMenuLink.classList.add('active-link');
     } else {
-      navMenuLink.classList.remove('active');
+      navMenuLink.classList.remove('active-link');
     }
   });
 }
+
 window.addEventListener('load', navMenuScrollSpy);
 document.addEventListener('scroll', navMenuScrollSpy);
 
 /*Animations's Manipulation */
 
-const submitButton = document.querySelector('.submit-button');
-const formContainer = document.querySelector('.bmi-page-wrapper form');
+const submitButton = document.querySelector('.send-form-button');
+const formContainer = document.querySelector('.form');
 const infoBMI = document.querySelector('.bmi-info-container');
 
 const closeBMIInfo = document.querySelector('.close-bmi-info');
@@ -64,13 +65,4 @@ formContainer.addEventListener('transitionend', () => {
 closeBMIInfo.addEventListener('click', () => {
   infoBMI.classList.remove('show-info');
   formContainer.classList.remove('hide-form');
-})
-
-// const genderButtons = document.querySelectorAll('.gender-container button');
-
-// genderButtons.forEach(button => {
-//   button.addEventListener('click', () => {
-//     if (button.classList.contains('male-button')) console.log('Masculino');
-//     if (button.classList.contains('female-button')) console.log('Feminino');
-//   });
-// });
+});
