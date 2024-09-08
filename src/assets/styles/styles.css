@@ -334,10 +334,9 @@ span {
 }
 
 .bg-bmi-form {
-  background: var(--sandy-brown);
+  background: var(--tomato);
+  box-shadow: 0.6rem 0 2rem #00000075;
   object-fit: cover;
-
-  border-right: 2px solid var(--nero-color);
 
   width: min(100%, 60rem);
   height: 100%;
@@ -346,7 +345,7 @@ span {
 }
 
 .form {
-  background: linear-gradient(62deg, var(--coral) 10%, var(--sandy-brown));
+  background: linear-gradient(0deg, var(--coral) 0%, var(--indian-red));
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
 
@@ -378,6 +377,8 @@ span {
 }
 
 :is(.height-content, .weight-content) label {
+  pointer-events: none;
+
   position: absolute;
   top: 1.2rem;
   right: 2rem;
