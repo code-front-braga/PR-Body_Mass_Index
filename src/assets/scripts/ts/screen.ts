@@ -1,5 +1,3 @@
-// TODO: Renomear Variáveis e Funções;
-
 import { BMIClassifications } from './data.js';
 import { calculateBMI, displayBMIContent, getBMIClassification } from './utils.js';
 
