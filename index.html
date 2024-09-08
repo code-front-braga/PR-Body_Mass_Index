@@ -17,13 +17,14 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <link rel="stylesheet" href="./src/assets/styles/styles.css" />
+  <link rel="stylesheet" href="./src/assets/styles/desktop.css">
 
   <title>Body Mass Index (BMI)</title>
 </head>
 
 <body class="light-background-color">
   <header id="header" class="d-flex">
-    <div class="header-wrapper">
+    <div class="header-wrapper d-flex">
       <div class="svg-logo-content d-flex-center">
         <span>Developed by</span>
 
@@ -85,10 +86,11 @@
       <div class="welcome-container d-flex" data-aos="fade-up" data-aos-delay="100">
         <div class="welcome-wrapper d-flex">
           <h1 class="title-font-default">Bem-Vindo!</h1>
-          <h3>Descubra dicas sobre alimentação e exercícios para melhorar sua qualidade de vida.</h3>
-          <p class="paragraph-font-default">E olha que legal! Clique no botão abaixo para acessar nossa calculadora de
+          <h2 class="subtitle-font-default">Descubra dicas sobre alimentação e exercícios para melhorar sua qualidade de
+            vida.</h2>
+          <h3 class="header-3">E olha que legal! Clique no botão abaixo para acessar nossa calculadora de
             Índice de Massa Corporal.
-          </p>
+          </h3>
 
           <a href="#bmi-page"><button class="go-to-bmi-button">CALCULAR IMC</button></a>
         </div>
@@ -293,7 +295,7 @@
           alt="Ilustração de um garfo sefurando verduras e legumes">
 
         <form class="form d-flex-center">
-          <h3>Calcule o seu Índice de Massa Corporal (IMC)</h3>
+          <h2 class="subtitle-font-default">Calcule o seu Índice de Massa Corporal (IMC)</h2>
 
           <div class="name-content">
             <input type="text" name="input-name" id="user-name" class="light-background-color" placeholder="seu nome"
@@ -322,7 +324,7 @@
 
           <header class="header-result-container">
             <h2 class="subtitle-font-default"></h2>
-            <h3>Seu IMC é de <span></span>Kg/M²</h3>
+            <h3 class="header-3">Seu IMC é de <span></span>Kg/M²</h3>
           </header>
 
           <div class="tips-content">
@@ -339,7 +341,6 @@
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
-  <script src="./src/assets/scripts/js/aosInit.js"></script>
   <script type="module" src="./dist/js/index.js"></script>
   <script type="module" src="./src/assets/scripts/js/main.js"></script>
 </body>

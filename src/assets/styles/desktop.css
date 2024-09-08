@@ -1,0 +1,22 @@
+@media (max-width: 1025px) {
+  section {
+    padding: 3rem 1.4rem;
+  }
+
+  span,
+  #header-ul-nav li a {
+    font-size: 1.46rem;
+  }
+
+  .title-font-default {
+    font-size: 4.6rem;
+  }
+
+  .subtitle-font-default {
+    font-size: 2.2rem;
+  }
+
+  .welcome-wrapper h3 {
+    font-size: 1.8rem;
+  }
+}

@@ -14,7 +14,7 @@
   --secondary-font: 'Inter', sans-serif;
 
   /* Sizes */
-  --header-height: 5.85125rem;
+  --header-height: 6.33125rem;
   --default-font-size: 1.6rem;
 }
 
@@ -31,19 +31,35 @@ html {
   scroll-behavior: smooth;
 }
 
-button,
-input[type='submit'] {
-  border: none;
+body {
+  font-size: var(--default-font-size);
+  -webkit-font-smoothing: antialiased;
+}
 
+button {
+  border: none;
   cursor: pointer;
 }
 
 a {
+  color: var(--ivory-color);
+
+  font-family: var(--primary-font);
   text-decoration: none;
 }
 
 li {
   list-style-type: none;
+}
+
+p {
+  color: var(--nero-color);
+
+  width: 100%;
+
+  font-family: var(--secondary-font);
+  font-size: 1.8rem;
+  font-weight: normal;
 }
 
 section {
@@ -54,17 +70,18 @@ section {
 }
 
 span {
-  font-family: var(--primary-font);
-  font-size: var(--default-font-size);
   color: var(--ivory-color);
+
+  font-family: var(--primary-font);
 }
 
 .title-font-default {
   color: var(--ivory-color);
+  text-shadow: 0rem 0.6rem 0.6rem #00000085;
 
   font-family: var(--primary-font);
   font-size: 5rem;
-  text-shadow: 0rem 0.6rem 0.6rem #00000085;
+  text-align: center;
   letter-spacing: 1rem;
 }
 
@@ -72,14 +89,17 @@ span {
   font-family: var(--primary-font);
   font-size: 2.8rem;
   font-weight: normal;
+  text-align: center;
 }
 
-.paragraph-font-default {
+.header-3 {
   color: var(--ivory-color);
 
-  font-family: var(--secondary-font);
-  font-size: 1.8rem;
+  font-family: var(--primary-font);
+  font-size: 2rem;
   font-weight: normal;
+  text-align: center;
+  line-height: 3rem;
 }
 
 .light-background-color {
@@ -120,7 +140,6 @@ span {
 .header-wrapper {
   width: 100%;
 
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -139,13 +158,6 @@ span {
 
 :is(#header-ul-nav li:hover > a, .active-link, .active-link:focus) {
   color: var(--active-color);
-}
-
-#header-ul-nav li a {
-  color: var(--ivory-color);
-
-  font-family: var(--primary-font);
-  font-size: var(--default-font-size);
 }
 
 /* Home Page */
@@ -190,18 +202,13 @@ span {
 .welcome-wrapper {
   margin: auto;
 
-  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
 }
 
-.welcome-wrapper h3 {
+.welcome-wrapper h2 {
   color: var(--ivory-color);
-
-  font-family: var(--primary-font);
-  font-size: 2rem;
-  font-weight: normal;
 }
 
 .welcome-wrapper .go-to-bmi-button {
@@ -249,11 +256,6 @@ span {
 }
 
 :is(.food-info-container, .exercise-info-container) p {
-  color: var(--nero-color);
-
-  font-family: var(--secondary-font);
-  font-size: 1.8rem;
-  font-weight: normal;
   text-align: justify;
   line-height: 2.6rem;
 }
@@ -287,12 +289,7 @@ span {
 :is(.food-cards, .exercise-cards) p {
   color: var(--ivory-color);
 
-  width: 100%;
-
-  font-family: var(--paragraph-font);
-  font-size: 1.8rem;
-  line-height: 2rem;
-  text-align: center;
+  font-family: var(--primary-font);
 }
 
 .exercise-cards p {
@@ -361,11 +358,8 @@ span {
   transition: 2s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.form h3 {
+.form h2 {
   color: var(--ivory-color);
-
-  font-family: var(--primary-font);
-  font-size: 2rem;
 }
 
 .name-content,
@@ -384,30 +378,29 @@ span {
   right: 2rem;
 
   font-family: var(--primary-font);
-  font-size: 1.4rem;
 }
 
-.form input:not(input[type='submit']) {
-  box-shadow: 0 0 0.4rem var(--nero-color);
-  border-radius: 6px;
-  border: none;
+.form input {
   outline: none;
 
   text-indent: 1.5rem;
 
   width: 100%;
+}
+
+.form input,
+.send-form-button {
+  box-shadow: 0 0 0.4rem var(--nero-color);
+  border-radius: 6px;
+  border: none;
+
+  font-family: var(--primary-font);
+
   height: 5rem;
 }
 
 .send-form-button {
-  border-radius: 6px;
-  box-shadow: 0 0 0.4rem var(--nero-color);
-
-  font-family: var(--primary-font);
-  font-size: var(--default-font-size);
-
   width: min(100%, 30rem);
-  height: 5rem;
 }
 
 .send-form-button:disabled {
@@ -442,9 +435,8 @@ span {
   font-weight: normal;
 }
 
-.bmi-info-container h3 {
-  font-family: var(--primary-font);
-  font-size: 2rem;
+.bmi-info-container p {
+  color: var(--ivory-color);
 }
 
 .close-bmi-info {
@@ -467,11 +459,6 @@ span {
   text-align: center;
 }
 
-.header-result-container h3 {
-  font-family: var(--primary-font);
-  font-size: 2rem;
-}
-
 .header-result-container span {
   font-size: 2.8rem;
 }
@@ -484,12 +471,6 @@ span {
 
 .tips-content h2 {
   margin-bottom: 2.6rem;
-}
-
-.tips-content p {
-  font-family: var(--secondary-font);
-  font-size: 1.8rem;
-  font-weight: normal;
 }
 
 /* Animations Form */
