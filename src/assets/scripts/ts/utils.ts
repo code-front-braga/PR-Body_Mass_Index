@@ -1,40 +1,50 @@
-interface BMICalculatorProps {
-  weight: number;
-  height: number;
+interface calculateBMIProps {
+  userWeight: number;
+  userHeight: number;
 }
 
-export function BMICalculator({ weight, height }: BMICalculatorProps): number {
-  const bmi = (weight / Math.pow(height, 2)) * 10000;
+export function calculateBMI({ userWeight, userHeight }: calculateBMIProps): number {
+  const bmi = (userWeight / Math.pow(userHeight, 2)) * 10000;
 
   return bmi;
 }
 
-export function getBMIInfo(bmiResult: number) {
-  const isUnderWeight = bmiResult < 19;
+interface BMIClassificationProps {
+  isUnderweight: boolean;
+  isNormalWeight: boolean;
+  isOverweight: boolean;
+  isObesityClassOne: boolean;
+  isObesityClassTwo: boolean;
+  isObesityClassThree: boolean;
+}
+
+export function getBMIClassification(bmiResult: number): BMIClassificationProps {
+  const isUnderweight = bmiResult < 19;
   const isNormalWeight = bmiResult >= 19 && bmiResult < 25;
-  const isOverWeight = bmiResult >= 25 && bmiResult < 30;
+  const isOverweight = bmiResult >= 25 && bmiResult < 30;
   const isObesityClassOne = bmiResult >= 30 && bmiResult < 35;
   const isObesityClassTwo = bmiResult >= 35 && bmiResult < 40;
   const isObesityClassThree = bmiResult >= 40;
 
   return {
-    isUnderWeight,
+    isUnderweight,
     isNormalWeight,
-    isOverWeight,
+    isOverweight,
     isObesityClassOne,
     isObesityClassTwo,
     isObesityClassThree,
   };
 }
 
-interface DisplayBMIContentProps {
+interface BMIContentProps {
   title: string;
   text: string;
-  h2: HTMLElement;
-  p: HTMLParagraphElement;
 }
 
-export function displayBMIContent({ title, text, h2, p }: DisplayBMIContentProps) {
-  h2.textContent = title;
-  p.innerHTML = text;
+export function displayBMIContent({ title, text }: BMIContentProps): void {
+  const resultHeading = document.querySelector('.header-result-container h2') as HTMLElement;
+  const tipsParagraph = document.querySelector('.tips-content p') as HTMLParagraphElement;
+
+  resultHeading.textContent = title;
+  tipsParagraph.innerHTML = text;
 }

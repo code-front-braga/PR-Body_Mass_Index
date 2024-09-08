@@ -1,96 +1,79 @@
 // TODO: Renomear Variáveis e Funções;
 
 import { BMIClassifications } from './data.js';
-import { BMICalculator, displayBMIContent, getBMIInfo } from './utils.js';
+import { calculateBMI, displayBMIContent, getBMIClassification } from './utils.js';
 
-export const sendFormButton = document.querySelector('.send-form-button') as HTMLButtonElement;
+export const nameInput = document.querySelector('#user-name') as HTMLInputElement;
+export const heightInput = document.querySelector('#user-height') as HTMLInputElement;
+export const weightInput = document.querySelector('#user-weight') as HTMLInputElement;
 
-export const inputName = document.querySelector('#user-name') as HTMLInputElement;
-export const inputHeight = document.querySelector('#user-height') as HTMLInputElement;
-export const inputWeight = document.querySelector('#user-weight') as HTMLInputElement;
+const nameSpanElement = document.querySelector('.bmi-info-container h2 span') as HTMLSpanElement;
 
-const spanName = document.querySelector('.bmi-info-container h2 span') as HTMLSpanElement;
-const h2Result = document.querySelector('.header-result-container h2') as HTMLElement;
-const spanBMIResult = document.querySelector('.header-result-container h3 span') as HTMLSpanElement;
-const pTips = document.querySelector('.tips-content p') as HTMLParagraphElement;
+const bmiResultSpanElement = document.querySelector('.header-result-container h3 span') as HTMLSpanElement;
 
-// TODO: Verificar onde colocar essa função;
-function checkIfInputsAreFilled() {
-  const regexForStrings = /^[A-Za-z\s]+$/;
-  const onlyNumbers = /^\d+$/;
+export function showBMIInformation() {
+  const userWeight = Number(weightInput.value);
+  const userHeight = Number(heightInput.value);
 
-  sendFormButton.disabled =
-    !inputName.value.match(regexForStrings) || !inputHeight.value.match(onlyNumbers) || !inputWeight.value;
-}
+  const calculatedBMI = calculateBMI({ userWeight, userHeight });
 
-// TODO: Verificar onde colocar essa função;
-function addInputEventListener(inputs: HTMLInputElement[]) {
-  inputs.forEach(input => {
-    input.addEventListener('input', checkIfInputsAreFilled);
-  });
-}
-
-export function displayBMIInfo() {
-  const weight = Number(inputWeight.value);
-  const height = Number(inputHeight.value);
-
-  const BMIResult = BMICalculator({ weight, height });
-
-  const { isUnderWeight, isNormalWeight, isOverWeight, isObesityClassOne, isObesityClassTwo } = getBMIInfo(BMIResult);
+  const { isUnderweight, isNormalWeight, isOverweight, isObesityClassOne, isObesityClassTwo } =
+    getBMIClassification(calculatedBMI);
 
   const {
-    BMIIsUnderWeight,
-    BMIIsNormalWeight,
-    BMIIsOverWeight,
-    BMIIsObesityClassOne,
-    BMIIsObesityClassTwo,
-    BMIIsObesityClassThree,
+    underweightClassification,
+    normalWeightClassification,
+    overweightClassification,
+    obesityClassOneClassification,
+    obesityClassTwoClassification,
+    obesityClassThreeClassification,
   } = BMIClassifications;
 
-  spanName.textContent = inputName.value;
-  spanBMIResult.textContent = BMIResult.toFixed(2);
+  nameSpanElement.textContent = nameInput.value;
+  bmiResultSpanElement.textContent = calculatedBMI.toFixed(2);
 
   switch (true) {
-    case isUnderWeight:
-      displayBMIContent({ title: BMIIsUnderWeight.title, text: BMIIsUnderWeight.text, h2: h2Result, p: pTips });
+    case isUnderweight:
+      displayBMIContent({
+        title: underweightClassification.title,
+        text: underweightClassification.text,
+      });
       break;
 
     case isNormalWeight:
-      displayBMIContent({ title: BMIIsNormalWeight.title, text: BMIIsNormalWeight.text, h2: h2Result, p: pTips });
+      displayBMIContent({
+        title: normalWeightClassification.title,
+        text: normalWeightClassification.text,
+      });
       break;
 
-    case isOverWeight:
-      displayBMIContent({ title: BMIIsOverWeight.title, text: BMIIsOverWeight.text, h2: h2Result, p: pTips });
+    case isOverweight:
+      displayBMIContent({
+        title: overweightClassification.title,
+        text: overweightClassification.text,
+      });
       break;
 
     case isObesityClassOne:
-      displayBMIContent({ title: BMIIsObesityClassOne.title, text: BMIIsObesityClassOne.text, h2: h2Result, p: pTips });
+      displayBMIContent({
+        title: obesityClassOneClassification.title,
+        text: obesityClassOneClassification.text,
+      });
       break;
 
     case isObesityClassTwo:
-      displayBMIContent({ title: BMIIsObesityClassTwo.title, text: BMIIsObesityClassTwo.text, h2: h2Result, p: pTips });
+      displayBMIContent({
+        title: obesityClassTwoClassification.title,
+        text: obesityClassTwoClassification.text,
+      });
 
       break;
 
     default:
       displayBMIContent({
-        title: BMIIsObesityClassThree.title,
-        text: BMIIsObesityClassThree.text,
-        h2: h2Result,
-        p: pTips,
+        title: obesityClassThreeClassification.title,
+        text: obesityClassThreeClassification.text,
       });
       break;
   }
 }
-
-// TODO: Verificar onde colocar essa função;
-export function resetInputs(inputs: HTMLInputElement[]) {
-  sendFormButton.disabled = true;
-
-  inputs.forEach(input => {
-    input.value = '';
-  });
-}
-
-addInputEventListener([inputName, inputHeight, inputWeight]);
-window.addEventListener('load', checkIfInputsAreFilled);
