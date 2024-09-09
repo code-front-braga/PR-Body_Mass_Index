@@ -87,7 +87,7 @@ span {
 
 .subtitle-font-default {
   font-family: var(--primary-font);
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   font-weight: normal;
   text-align: center;
 }
@@ -146,6 +146,10 @@ span {
 
 .header-wrapper .svg-logo-content {
   gap: 1rem;
+}
+
+.header-wrapper a {
+  --animate-delay: 0.6s;
 }
 
 .header-wrapper svg {
@@ -296,8 +300,7 @@ span {
   color: var(--nero-color);
 }
 
-:is(.food-benefits-cards-container, .exercise-benefits-cards-container) img {
-  border-radius: 4px;
+:is(.food-cards, .exercise-cards) img {
   filter: drop-shadow(0 1.4rem 1.2rem var(--sandy-brown));
 
   width: 14rem;
@@ -314,6 +317,10 @@ span {
 
 #bmi-page {
   min-height: calc(100vh - var(--header-height));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .bmi-page-wrapper {
@@ -322,12 +329,9 @@ span {
 
   position: relative;
 
-  margin: auto;
-
   width: min(100%, 120rem);
-  height: 55rem;
 
-  align-items: center;
+  background: #00000052;
 }
 
 .bg-bmi-form {
@@ -335,8 +339,7 @@ span {
   box-shadow: 0.6rem 0 2rem #00000075;
   object-fit: cover;
 
-  width: min(100%, 60rem);
-  height: 100%;
+  width: 50%;
 
   z-index: 2;
 }
@@ -346,16 +349,16 @@ span {
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;
 
-  width: min(100%, 60rem);
+  width: 50%;
+  height: auto;
 
   position: relative;
   left: 0;
-  height: 100%;
 
   flex-direction: column;
   gap: 4rem;
 
-  transition: 2s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .form h2 {
@@ -364,7 +367,8 @@ span {
 
 .name-content,
 .height-content,
-.weight-content {
+.weight-content,
+.send-form-button {
   width: min(100%, 30rem);
 
   position: relative;
@@ -399,10 +403,6 @@ span {
   height: 5rem;
 }
 
-.send-form-button {
-  width: min(100%, 30rem);
-}
-
 .send-form-button:disabled {
   background: rgb(255, 0, 0);
   opacity: 0.5;
@@ -414,7 +414,7 @@ span {
   background: linear-gradient(62deg, var(--darks-late-blue) 10%, var(--indian-red));
   color: var(--ivory-color);
 
-  width: min(100%, 60rem);
+  width: 50%;
   height: 100%;
 
   position: absolute;
@@ -426,12 +426,12 @@ span {
   gap: 4rem;
   padding: 1.4rem;
 
-  transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: 1.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .bmi-info-container h2 span {
   font-family: var(--primary-font);
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   font-weight: normal;
 }
 
@@ -443,7 +443,7 @@ span {
   background: var(--ivory-color);
   border-radius: 4px;
 
-  font-size: 2rem;
+  font-size: 2.8rem;
 
   width: 4rem;
   height: 4rem;
@@ -453,6 +453,12 @@ span {
   right: 2rem;
 
   z-index: 0;
+
+  transition: 0.4s ease-in-out;
+}
+
+.close-bmi-info:hover {
+  box-shadow: 0 0 1.2rem var(--sandy-brown);
 }
 
 .header-result-container {
@@ -464,9 +470,10 @@ span {
 }
 
 .tips-content {
-  padding: 1.4rem;
-
   overflow: auto;
+  scrollbar-width: thin;
+
+  padding: 1.4rem;
 }
 
 .tips-content h2 {
@@ -475,9 +482,9 @@ span {
 
 /* Animations Form */
 .bmi-page-wrapper form.hide-form {
-  left: -60rem;
+  left: -50%;
 }
 
 .bmi-info-container.show-info {
-  left: 60rem;
+  left: 50%;
 }

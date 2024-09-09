@@ -20,15 +20,17 @@
   <link rel="stylesheet" href="./src/assets/styles/desktop.css">
 
   <title>Body Mass Index (BMI)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body class="light-background-color">
   <header id="header" class="d-flex">
     <div class="header-wrapper d-flex">
       <div class="svg-logo-content d-flex-center">
-        <span>Developed by</span>
+        <span class="animate__animated animate__backInDown">Developed by</span>
 
-        <a href="https://github.com/code-front-braga" target="_blank">
+        <a href="https://github.com/code-front-braga" target="_blank"
+          class="animate__animated animate__backInDown animate__delay-1s">
           <?xml version="1.0" encoding="utf-8"?>
           <svg viewBox="148.0249 176.2958 234.6202 82.8544" xmlns="http://www.w3.org/2000/svg">
             <defs />
@@ -133,7 +135,7 @@
         <div class="food-benefits-container d-flex">
           <h2 class="subtitle-font-default">Cores dos alimentos e seus benefícios !</h2>
 
-          <div class="food-benefits-cards-container d-grid-columns-4">
+          <div class="food-benefits-cards-container d-grid-columns-4 d-grid-columns-2">
 
             <div class="green-food-card food-cards" data-aos="fade-up" data-aos-delay="100">
               <img src="./src/assets/images/green-food.webp" loading="lazy" alt="Image de um couve">
@@ -214,7 +216,7 @@
         <div class="exercise-benefits-container d-flex">
           <h2 class="subtitle-font-default">Exercite-se !</h2>
 
-          <div class="exercise-benefits-cards-container d-grid-columns-4">
+          <div class="exercise-benefits-cards-container d-grid-columns-4 d-grid-columns-2">
 
             <div class="walk-card exercise-cards" data-aos="fade-up" data-aos-delay="100">
               <img src="./src/assets/images/walk.webp" alt="Ilustração de dois idosos andando">
@@ -316,7 +318,7 @@
         </form>
 
         <div class="bmi-info-container d-flex">
-          <button class="close-bmi-info d-flex-center">
+          <button class="close-bmi-info d-flex-center animate__animated animate__pulse animate__infinite">
             <i class="bi bi-arrow-left-short"></i>
           </button>
 
