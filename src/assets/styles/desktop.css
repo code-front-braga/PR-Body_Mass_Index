@@ -96,3 +96,13 @@
     font-size: 2rem;
   }
 }
+
+@media (max-width: 992px) {
+  .bmi-page-wrapper {
+    height: 80rem;
+  }
+
+  .form {
+    gap: 4rem;
+  }
+}

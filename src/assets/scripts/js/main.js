@@ -3,12 +3,11 @@ function aosInit() {
   AOS.init({
     duration: 500,
     easing: 'ease-in-out',
-    once: true,
+    once: false,
     mirror: false,
   });
 }
 window.addEventListener('load', aosInit);
-aosInit();
 
 /*Links Manipulation and Scrolls */
 let navMenuLinks = document.querySelectorAll('#header-ul-nav li a');
