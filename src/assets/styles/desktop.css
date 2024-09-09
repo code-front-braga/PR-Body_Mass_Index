@@ -106,3 +106,88 @@
     gap: 4rem;
   }
 }
+
+@media (max-width: 769px) {
+  p {
+    font-size: 1.46rem;
+  }
+
+  #header {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
+
+  .header-wrapper .svg-logo-content svg {
+    width: 8rem;
+  }
+
+  .header-wrapper .svg-logo-content span {
+    font-size: 1.4rem;
+  }
+
+  #header-nav {
+    background: #00000025;
+    border-radius: 6px;
+  }
+
+  .title-font-default {
+    font-size: 4.2rem;
+  }
+
+  .welcome-wrapper h2 {
+    font-size: 2.4rem;
+  }
+
+  .bmi-page-wrapper {
+    height: 60rem;
+  }
+
+  .bmi-info-container h2 span {
+    font-size: 2.8rem;
+  }
+
+  .header-result-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .header-result-container h3 {
+    font-size: 1.6rem;
+  }
+
+  .header-result-container h3 span {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 601px) {
+  .menu-bar {
+    display: flex;
+  }
+
+  #header-nav {
+    backdrop-filter: blur(0.5rem) saturate(200%);
+    -webkit-backdrop-filter: blur(0.5rem) saturate(200%);
+    background-color: rgba(92, 74, 114, 0.69);
+    border-radius: 1.2rem;
+    box-shadow: 0 0 1.6rem #000;
+
+    position: absolute;
+    top: 12rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: min(100%, 50rem);
+    height: 50rem;
+  }
+
+  #header-ul-nav {
+    height: 100%;
+
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  #header-ul-nav li a {
+    font-size: 1.8rem;
+  }
+}

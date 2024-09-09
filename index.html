@@ -28,6 +28,7 @@
 </head>
 
 <body class="light-background-color">
+
   <header id="header" class="d-flex">
     <div class="header-wrapper d-flex">
       <div class="svg-logo-content d-flex-center">
@@ -36,7 +37,7 @@
         <a href="https://github.com/code-front-braga" target="_blank"
           class="animate__animated animate__backInDown animate__delay-1s">
           <?xml version="1.0" encoding="utf-8"?>
-          <svg viewBox="148.0249 176.2958 234.6202 82.8544" xmlns="http://www.w3.org/2000/svg">
+          <svg class="d-flex" viewBox="148.0249 176.2958 234.6202 82.8544" xmlns="http://www.w3.org/2000/svg">
             <defs />
             <g transform="matrix(1, 0, 0, 1, 148.0249350670715, 72.52990830734234)">
               <g transform="matrix(1, 0, 0, 1, -38.960847, 82.852227)">
@@ -70,9 +71,16 @@
           </svg>
         </a>
       </div>
+      <label class="menu-bar" for="check">
+        <input type="checkbox" id="check">
+
+        <span class="top"></span>
+        <span class="middle"></span>
+        <span class="bottom"></span>
+      </label>
 
 
-      <nav id="header-nav" class="d-flex">
+      <nav id="header-nav" class="d-flex-center">
         <ul id="header-ul-nav" class="d-flex-center">
           <li><a href="#home-page" class="active-link">Página Inicial</a></li>
           <li><a href="#food-page">Alimentação</a></li>
@@ -326,7 +334,7 @@
             <i class="bi bi-arrow-left-short"></i>
           </button>
 
-          <h2 class="subtitle-font-default">Olá, <span>Leonardo!</span></h2>
+          <h2 class="subtitle-font-default">Olá, <span></span></h2>
 
           <header class="header-result-container">
             <h2 class="subtitle-font-default"></h2>
