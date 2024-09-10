@@ -507,18 +507,23 @@ input[type='checkbox'] {
   visibility: hidden;
 }
 
-.menu-bar {
-  display: none;
-  position: relative;
+.menu-toggle-label {
   cursor: pointer;
+
+  position: relative;
+
   width: 40px;
   height: 30px;
+
+  display: none;
+
+  z-index: 6;
 }
 
-.menu-bar span {
+.menu-toggle-label span {
   position: absolute;
   width: 40px;
-  height: 5px;
+  height: 4px;
   background: #f1faee;
   border-radius: 8rem;
   display: inline-block;
@@ -526,15 +531,15 @@ input[type='checkbox'] {
   left: 0;
 }
 
-.menu-bar span.top {
+.menu-toggle-label span.top {
   top: 0;
 }
 
-.menu-bar span.middle {
+.menu-toggle-label span.middle {
   top: 13px;
 }
 
-.menu-bar span.bottom {
+.menu-toggle-label span.bottom {
   bottom: 0;
 }
 

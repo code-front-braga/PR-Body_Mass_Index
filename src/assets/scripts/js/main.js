@@ -7,11 +7,15 @@ function aosInit() {
     mirror: false,
   });
 }
-window.addEventListener('load', aosInit);
+
+/*********************************************************************/
+const headerOffset = 200;
+const navMenuLinks = document.querySelectorAll('#header-ul-nav li a');
+const menuBar = document.querySelector('.menu-toggle-label');
+const headerNav = document.querySelector('#header-nav');
+const checkBox = document.querySelector('#menu-toggle-checkbox');
 
 /*Links Manipulation and Scrolls */
-let navMenuLinks = document.querySelectorAll('#header-ul-nav li a');
-
 function updateActiveLink() {
   navMenuLinks.forEach(link => {
     link.addEventListener('click', e => {
@@ -22,43 +26,80 @@ function updateActiveLink() {
       e.currentTarget.classList.add('active-link');
     });
 
-    let section = document.querySelector(link.hash);
-    if (!section) return;
-
-    let position = window.scrollY + 200;
-    let sectionTop = section.offsetTop;
-    let sectionHeight = section.offsetHeight;
-
-    if (position >= sectionTop && position <= sectionTop + sectionHeight) {
-      document
-        .querySelectorAll('#header-ul-nav li a.active-link')
-        .forEach(link => link.classList.remove('active-link'));
-
-      link.classList.add('active-link');
-    } else {
-      link.classList.remove('active-link');
-    }
+    updateSectionOnScroll(link);
+    closeNavBarByLinks(link);
   });
 }
-window.addEventListener('load', updateActiveLink);
-document.addEventListener('scroll', updateActiveLink);
+
+function updateSectionOnScroll(link) {
+  let section = document.querySelector(link.hash);
+  if (!section) return;
+
+  let position = window.scrollY + headerOffset;
+  let sectionTop = section.offsetTop;
+  let sectionHeight = section.offsetHeight;
+
+  if (position >= sectionTop && position <= sectionTop + sectionHeight) {
+    const activeLinks = document.querySelectorAll('#header-ul-nav li a.active-link');
+    activeLinks.forEach(link => link.classList.remove('active-link'));
+
+    link.classList.add('active-link');
+  } else {
+    link.classList.remove('active-link');
+  }
+}
 
 /*Animations's Manipulation */
 const submitButton = document.querySelector('.send-form-button');
 const formContainer = document.querySelector('.form');
-const infoBMI = document.querySelector('.bmi-info-container');
-
+const BMIInfo = document.querySelector('.bmi-info-container');
 const closeBMIInfo = document.querySelector('.close-bmi-info');
 
-submitButton.addEventListener('click', () => {
-  formContainer.classList.add('hide-form');
-});
+function hideForm() {
+  submitButton.addEventListener('click', () => {
+    addClassListOnElement(formContainer, 'hide-form');
+  });
+}
 
-formContainer.addEventListener('transitionend', () => {
-  formContainer.classList.contains('hide-form') && infoBMI.classList.add('show-info');
-});
+function displayBMIInfoAfterFormTransition() {
+  formContainer.addEventListener('transitionend', () => {
+    formContainer.classList.contains('hide-form') && addClassListOnElement(BMIInfo, 'show-info');
+  });
+}
 
-closeBMIInfo.addEventListener('click', () => {
-  infoBMI.classList.remove('show-info');
-  formContainer.classList.remove('hide-form');
-});
+function hideBMIInfo() {
+  closeBMIInfo.addEventListener('click', () => {
+    removeClassListOnElement(BMIInfo, 'show-info');
+    removeClassListOnElement(formContainer, 'hide-form');
+  });
+}
+
+function addClassListOnElement(element, classList) {
+  element.classList.add(classList);
+}
+
+function removeClassListOnElement(element, classList) {
+  element.classList.remove(classList);
+}
+
+/*Toggle Navbar and Links */
+function toggleNavBar() {
+  menuBar.addEventListener('click', () => {
+    headerNav.classList.toggle('show-menu', checkBox.checked);
+  });
+}
+
+function closeNavBarByLinks(link) {
+  link.addEventListener('click', () => {
+    headerNav.classList.remove('show-menu');
+    checkBox.checked = false;
+  });
+}
+
+window.addEventListener('load', aosInit);
+window.addEventListener('load', updateActiveLink);
+document.addEventListener('scroll', updateActiveLink);
+toggleNavBar();
+hideForm();
+hideBMIInfo();
+displayBMIInfoAfterFormTransition();

@@ -146,21 +146,18 @@
     font-size: 2.8rem;
   }
 
-  .header-result-container h2 {
+  .header-result-container h2,
+  h3 span {
     font-size: 1.8rem;
   }
 
   .header-result-container h3 {
     font-size: 1.6rem;
   }
-
-  .header-result-container h3 span {
-    font-size: 1.8rem;
-  }
 }
 
 @media (max-width: 601px) {
-  .menu-bar {
+  .menu-toggle-label {
     display: flex;
   }
 
@@ -168,26 +165,30 @@
     backdrop-filter: blur(0.5rem) saturate(200%);
     -webkit-backdrop-filter: blur(0.5rem) saturate(200%);
     background-color: rgba(92, 74, 114, 0.69);
-    border-radius: 1.2rem;
-    box-shadow: 0 0 1.6rem #000;
+
+    height: 100vh;
 
     position: absolute;
-    top: 12rem;
-    left: 50%;
-    transform: translateX(-50%);
+    inset: 0;
 
-    width: min(100%, 50rem);
-    height: 50rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.6s ease-in-out;
+  }
+
+  #header-nav.show-menu {
+    visibility: visible;
+    opacity: 1;
   }
 
   #header-ul-nav {
     height: 100%;
 
     flex-direction: column;
-    justify-content: space-evenly;
+    gap: 10rem;
   }
 
   #header-ul-nav li a {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
 }
