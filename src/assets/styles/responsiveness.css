@@ -92,14 +92,23 @@
     font-size: 2rem;
   }
 
+  .bmi-info-container h2 span {
+    font-size: 2.8rem;
+  }
+
+  .header-result-container h3 span {
+    font-size: 2.4rem;
+  }
+
   .tips-content h2 {
     font-size: 2rem;
   }
 }
 
 @media (max-width: 992px) {
-  .bmi-page-wrapper {
-    height: 80rem;
+  #header {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
   }
 
   .form {
@@ -107,14 +116,9 @@
   }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 801px) {
   p {
-    font-size: 1.46rem;
-  }
-
-  #header {
-    padding-left: 1.8rem;
-    padding-right: 1.8rem;
+    font-size: 1.5rem;
   }
 
   .header-wrapper .svg-logo-content svg {
@@ -123,11 +127,6 @@
 
   .header-wrapper .svg-logo-content span {
     font-size: 1.4rem;
-  }
-
-  #header-nav {
-    background: #00000025;
-    border-radius: 6px;
   }
 
   .title-font-default {
@@ -142,8 +141,13 @@
     height: 60rem;
   }
 
+  .bmi-info-container {
+    gap: 2.6rem;
+  }
+
+  .bmi-info-container h2,
   .bmi-info-container h2 span {
-    font-size: 2.8rem;
+    font-size: 2rem;
   }
 
   .header-result-container h2,
@@ -190,5 +194,51 @@
 
   #header-ul-nav li a {
     font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  #header-ul-nav {
+    gap: 1.6rem;
+  }
+  
+  #header-ul-nav li a {
+    font-size: 1.4rem;
+  }
+  
+  .bmi-page-wrapper {
+    width: 100%;
+    height: 26%;
+  }
+
+  .form { 
+    gap: 1.2rem;
+  }
+
+  .form h2 {
+    font-size: 1.8rem;
+  }
+
+  .name-content,
+  .height-content,
+  .weight-content,
+  .send-form-button {
+    width: min(100%, 20rem);
+  }
+
+  .form input,
+  .send-form-button {
+    font-size: 1.4rem;
+
+    height: 3.6rem;
+  }
+
+  .form label {
+    font-size: 1.36rem;
+  }
+
+  .bmi-info-container {
+    justify-content: space-between;
+    gap: 1rem;
   }
 }

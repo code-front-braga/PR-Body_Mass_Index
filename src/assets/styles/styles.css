@@ -66,7 +66,7 @@ section {
   width: 100%;
   padding: 4rem 2.4rem;
   scroll-margin-top: var(--header-height);
-  overflow: clip;
+  overflow: hidden;
 }
 
 span {
@@ -341,36 +341,43 @@ span {
 }
 
 .bmi-page-wrapper {
-  border-radius: 12px;
-  overflow: hidden;
-
   position: relative;
 
   width: min(100%, 120rem);
+
+  justify-content: center;
 }
 
-.bg-bmi-form {
-  background: var(--tomato);
-  box-shadow: 0.6rem 0 2rem #00000075;
-  object-fit: cover;
-
-  width: 50%;
-
-  z-index: 2;
-}
-
-.form {
-  background: linear-gradient(0deg, var(--coral) 0%, var(--indian-red));
-  border-top-right-radius: 12px;
-  border-bottom-right-radius: 12px;
+.bg-bmi-container {
+  background: var(--ivory-color);
 
   width: 50%;
   height: auto;
 
+  z-index: 2;
+}
+
+.bg-bmi-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form {
+  background: linear-gradient(0deg, var(--coral) 0%, var(--indian-red));
+  border-radius: 12px;
+
+  width: 50%;
+  height: auto;
+
+  position: relative;
+  left: 0;
+
   flex-direction: column;
   gap: 4rem;
 
-  transition: 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  visibility: visible;
+  transition: 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .form h2 {
@@ -380,39 +387,45 @@ span {
 .name-content,
 .height-content,
 .weight-content,
-.send-form-button {
+.send-form-button-content {
   width: min(100%, 30rem);
 
   position: relative;
+
+  text-align: center;
 }
 
-:is(.height-content, .weight-content) label {
-  pointer-events: none;
-
-  position: absolute;
-  top: 1.2rem;
-  right: 2rem;
-
-  font-family: var(--primary-font);
-}
-
-.form input {
+:is(.name-content, .height-content, .weight-content) input {
   outline: none;
 
   text-indent: 1.5rem;
-
-  width: 100%;
 }
 
-.form input,
-.send-form-button {
+.send-form-button,
+:is(.name-content, .height-content, .weight-content) input {
+  background: var(--ivory-color);
   box-shadow: 0 0 0.4rem var(--nero-color);
   border-radius: 6px;
   border: none;
 
   font-family: var(--primary-font);
+  font-size: var(--default-font-size);
 
-  height: 5rem;
+  width: 100%;
+  height: 4.6rem;
+}
+
+:is(.height-content, .weight-content) label {
+  pointer-events: none;
+
+  font-family: var(--primary-font);
+
+  box-sizing: border-box;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 2rem;
 }
 
 .send-form-button:disabled {
@@ -423,82 +436,57 @@ span {
 }
 
 .bmi-info-container {
-  background: linear-gradient(62deg, var(--darks-late-blue) 10%, var(--indian-red));
-  color: var(--ivory-color);
+  background: linear-gradient(0deg, var(--coral) 0%, var(--indian-red));
+  border-radius: 12px;
 
   width: 50%;
   height: 100%;
 
   position: absolute;
-  left: 0rem;
+  left: 0;
 
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
-  gap: 4rem;
-  padding: 1.4rem;
+  gap: 2rem;
+  padding: 2rem;
 
-  transition: 1.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  visibility: hidden;
+  transition: 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.bmi-info-container h2 span {
-  font-family: var(--primary-font);
-  font-size: 3.2rem;
-  font-weight: normal;
-}
-
+.bmi-info-container h2,
+.bmi-info-container h2 span,
 .bmi-info-container p {
   color: var(--ivory-color);
 }
 
-.close-bmi-info {
-  background: var(--ivory-color);
-  border-radius: 4px;
-
-  font-size: 2.8rem;
-
-  width: 4rem;
-  height: 4rem;
-
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-
-  z-index: 0;
-
-  transition: 0.4s ease-in-out;
-}
-
-.close-bmi-info:hover {
-  box-shadow: 0 0 1.2rem var(--sandy-brown);
-}
-
-.header-result-container {
-  text-align: center;
-}
-
-.header-result-container span {
+.header-result-container h3 span {
   font-size: 2.8rem;
 }
 
 .tips-content {
   overflow: auto;
-  scrollbar-width: thin;
-
-  padding: 1.4rem;
 }
 
-.tips-content h2 {
-  margin-bottom: 2.6rem;
+.close-bmi-info {
+  border-radius: 4px;
+
+  font-size: 2.8rem;
+
+  width: 3.6rem;
+  height: 3.6rem;
 }
 
 /* Animations Form */
-.bmi-page-wrapper form.hide-form {
-  transform: translateX(-100%);
+.form.hide-form {
+  left: -50%;
+  visibility: hidden;
 }
 
-.bmi-info-container.show-info {
+.bmi-info-container.show-bmi-info {
   left: 50%;
+  visibility: visible;
 }
 
 /* Menu Bar */

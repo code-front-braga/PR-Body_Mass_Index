@@ -63,13 +63,13 @@ function hideForm() {
 
 function displayBMIInfoAfterFormTransition() {
   formContainer.addEventListener('transitionend', () => {
-    formContainer.classList.contains('hide-form') && addClassListOnElement(BMIInfo, 'show-info');
+    formContainer.classList.contains('hide-form') && addClassListOnElement(BMIInfo, 'show-bmi-info');
   });
 }
 
 function hideBMIInfo() {
   closeBMIInfo.addEventListener('click', () => {
-    removeClassListOnElement(BMIInfo, 'show-info');
+    removeClassListOnElement(BMIInfo, 'show-bmi-info');
     removeClassListOnElement(formContainer, 'hide-form');
   });
 }
@@ -95,6 +95,7 @@ function closeNavBarByLinks(link) {
     checkBox.checked = false;
   });
 }
+
 
 window.addEventListener('load', aosInit);
 window.addEventListener('load', updateActiveLink);

@@ -120,7 +120,7 @@
           <img src="./src/assets/images/bg-food.webp" loading="lazy"
             alt="Um prato com frutas, verduras e legumes bem colorido.">
 
-          <div>
+          <div data-aos="fade-left" data-aos-offset="500" data-aos-duration="600">
             <p>A alimentação é um dos pilares fundamentais para a manutenção da saúde e bem-estar. No entanto, com a
               correria do dia a dia, muitas vezes não damos a devida atenção ao que consumimos. É essencial refletir
               sobre nossos hábitos alimentares e fazer ajustes necessários para garantir uma dieta equilibrada e
@@ -305,8 +305,11 @@
 
     <section id="bmi-page" class="d-flex">
       <div class="bmi-page-wrapper d-flex">
-        <img class="bg-bmi-form" src="./src/assets/images/bg-bmi.webp"
-          alt="Ilustração de um garfo sefurando verduras e legumes">
+
+        <div class="bg-bmi-container">
+          <img class="bg-bmi-form" src="./src/assets/images/bg-bmi.webp"
+            alt="Ilustração de um garfo sefurando verduras e legumes">
+        </div>
 
         <form class="form d-flex-center">
           <h2 class="subtitle-font-default">Calcule o seu Índice de Massa Corporal (IMC)</h2>
@@ -325,8 +328,10 @@
             <input type="number" name="input-weight" id="user-weight" class="light-background-color"
               placeholder="seu peso ex.: 70" required>
           </div>
+          <div class="send-form-button-content">
+            <button class="send-form-button light-background-color" type="submit" disabled>Calcular</button>
+          </div>
 
-          <button class="send-form-button light-background-color" type="submit" disabled>Calcular</button>
         </form>
 
         <div class="bmi-info-container d-flex">
@@ -343,13 +348,11 @@
 
           <div class="tips-content">
             <h2 class="subtitle-font-default">Separei algumas dicas para você:</h2>
-            <p></p>
+            <p>Para ganhar peso de forma saudável, é importante aumentar a ingestão calórica consumindo mais calorias do que você gasta. Inclua alimentos ricos em nutrientes e calorias, como abacate, nozes, sementes, queijos e azeite de oliva. Comer com mais frequência, fazendo várias refeições pequenas ao longo do dia, pode ajudar a aumentar a ingestão calórica sem se sentir muito cheio. <br><br>Incluir proteínas em todas as refeições é essencial para o crescimento muscular e a manutenção do corpo. Boas fontes de proteína incluem carnes magras, ovos, leite, queijo, leguminosas e nozes.<br><br>Além disso, escolher carboidratos complexos, como batata-doce, arroz integral, quinoa e aveia, fornece energia sustentada e são ricos em nutrientes. <br><br>Praticar exercícios de resistência, como levantamento de peso, pode ajudar a ganhar massa muscular, contribuindo para um ganho de peso saudável. <br><br>Evite calorias vazias, como alimentos ricos em açúcar e gordura saturada, como refrigerantes, doces e frituras, pois eles podem levar a problemas de saúde sem fornecer os nutrientes necessários. <br><br>Manter-se bem hidratado é importante, mas evite beber grandes quantidades de água antes das refeições para não reduzir o apetite. Por fim, consultar um profissional de saúde, como um nutricionista, pode ajudar a criar um plano alimentar personalizado e garantir que você está ganhando peso de forma saudável.</p>
           </div>
         </div>
-
-
       </div>
-      </div>
+
     </section>
   </main>
 
