@@ -78,18 +78,18 @@ function toggleFormDisplay() {
   const isMobileView = window.matchMedia('(max-width: 480px)').matches;
 
   submitButton.addEventListener('click', () => {
-    toggleClassState(formContainer, isMobileView ? 'hide-form-481px' : 'hide-form', null);
-    toggleClassState(BMIInfo, isMobileView ? 'show-bmi-info-481px' : 'show-bmi-info', null);
+    toggleClassState(formContainer, isMobileView ? 'hide-form-480px' : 'hide-form', null);
+    toggleClassState(BMIInfo, isMobileView ? 'show-bmi-info-480px' : 'show-bmi-info', null);
   });
 
   closeBMIInfoButton.addEventListener('click', () => {
-    toggleClassState(formContainer, null, isMobileView ? 'hide-form-481px' : 'hide-form');
-    toggleClassState(BMIInfo, null, isMobileView ? 'show-bmi-info-481px' : 'show-bmi-info');
+    toggleClassState(formContainer, null, isMobileView ? 'hide-form-480px' : 'hide-form');
+    toggleClassState(BMIInfo, null, isMobileView ? 'show-bmi-info-480px' : 'show-bmi-info');
   });
 }
 
+toggleFormDisplay();
 window.addEventListener('load', aosInit);
 window.addEventListener('load', updateActiveLink);
 document.addEventListener('scroll', updateActiveLink);
 toggleNavBar();
-toggleFormDisplay();

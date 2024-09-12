@@ -262,7 +262,7 @@
   }
 }
 
-@media (max-width: 481px) {
+@media (max-width: 480px) {
   .d-grid-columns-1 {
     grid-template-columns: 1fr;
   }
@@ -348,12 +348,12 @@
     transition: opacity 1.2s;
   }
 
-  .form.hide-form-481px {
+  .form.hide-form-480px {
     visibility: hidden;
     opacity: 0;
   }
 
-  .bmi-info-container.show-bmi-info-481px {
+  .bmi-info-container.show-bmi-info-480px {
     visibility: visible;
     opacity: 1;
   }
