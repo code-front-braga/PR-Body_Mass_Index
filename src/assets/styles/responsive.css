@@ -1,6 +1,6 @@
 @media (max-width: 1025px) {
   section {
-    padding: 3rem 1.4rem;
+    padding: var(--header-height) 1.4rem;
   }
 
   span,
@@ -24,7 +24,6 @@
     font-size: 1.8rem;
   }
 
-  /* Food Page */
   :is(.food-info-container, .exercise-info-container) {
     background: #fff9;
     border-radius: 6px;
@@ -61,10 +60,6 @@
 
   .exercise-cards img {
     filter: drop-shadow(0 0.6rem 1rem var(--darks-late-blue));
-  }
-
-  .bmi-page-wrapper {
-    width: min(100%, 90rem);
   }
 
   .form h2 {
@@ -198,20 +193,44 @@
 }
 
 @media (max-width: 768px) and (orientation: landscape) {
+  #home-page {
+    height: 100vh;
+  }
+
+  .title-font-default {
+    font-size: 3rem;
+  }
+
+  .welcome-container {
+    margin-top: 4rem;
+  }
+
+  .welcome-wrapper {
+    gap: 1rem;
+  }
+
+  .welcome-wrapper h2 {
+    font-size: 2rem;
+  }
+
+  .welcome-wrapper h3 {
+    font-size: 1.6rem;
+  }
+
   #header-ul-nav {
     gap: 1.6rem;
   }
-  
+
   #header-ul-nav li a {
     font-size: 1.4rem;
   }
-  
+
   .bmi-page-wrapper {
     width: 100%;
     height: 26%;
   }
 
-  .form { 
+  .form {
     gap: 1.2rem;
   }
 
@@ -240,5 +259,146 @@
   .bmi-info-container {
     justify-content: space-between;
     gap: 1rem;
+  }
+}
+
+@media (max-width: 481px) {
+  .d-grid-columns-1 {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-toggle-label {
+    width: 3.2rem;
+    height: 2rem;
+  }
+
+  .menu-toggle-label span {
+    width: 3rem;
+    height: 0.2rem;
+  }
+
+  .menu-toggle-label span.middle {
+    top: 0.9rem;
+  }
+
+  input[type]:checked ~ span.top {
+    width: 3rem;
+    left: 0.3rem;
+  }
+
+  input[type]:checked ~ span.bottom {
+    width: 3rem;
+    bottom: -0.3rem;
+  }
+
+  #bmi-page {
+    background: url('../images/bg-bmi.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    width: 100%;
+  }
+
+  .title-font-default {
+    font-size: 2.4rem;
+  }
+
+  .welcome-wrapper h2 {
+    font-size: 1.6rem;
+  }
+
+  .welcome-wrapper h3 {
+    font-size: 1.4rem;
+  }
+
+  .welcome-wrapper .go-to-bmi-button {
+    border: 1px solid var(--sandy-brown);
+    border-radius: 16px;
+    box-shadow: 0 0 1.4rem var(--nero-color);
+
+    padding: 0.8rem 1.6rem;
+
+    transition: 0.4s ease-in-out;
+  }
+
+  .bg-bmi-container {
+    display: none;
+  }
+
+  .form {
+    width: 100%;
+
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .bmi-info-container {
+    width: 100%;
+
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .form,
+  .bmi-info-container {
+    background: transparent;
+    backdrop-filter: blur(20px) saturate(200%);
+
+    transition: opacity 1.2s;
+  }
+
+  .form.hide-form-481px {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .bmi-info-container.show-bmi-info-481px {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 415px) {
+  #header-ul-nav {
+    gap: 4rem;
+  }
+
+  .welcome-container {
+    width: 100%;
+
+    margin-top: 6rem;
+  }
+
+  .welcome-wrapper {
+    width: 100%;
+  }
+
+  :is(.food-info-container, .exercise-info-container) img {
+    width: 30rem;
+  }
+
+  :is(.food-page-wrapper, .exercise-page-wrapper) h2 {
+    font-size: 2rem;
+  }
+
+  :is(.food-cards, .exercise-cards) img {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .bmi-page-wrapper {
+    height: 60%;
+  }
+
+  .form {
+    gap: 2rem;
+  }
+
+  .bmi-info-container {
+    gap: 2rem;
+
+    top: 50%;
+    transform: translateY(-50%);
   }
 }

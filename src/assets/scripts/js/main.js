@@ -9,11 +9,25 @@ function aosInit() {
 }
 
 /*********************************************************************/
-const headerOffset = 200;
+const headerOffset = 100;
 const navMenuLinks = document.querySelectorAll('#header-ul-nav li a');
 const menuBar = document.querySelector('.menu-toggle-label');
 const headerNav = document.querySelector('#header-nav');
 const checkBox = document.querySelector('#menu-toggle-checkbox');
+
+/*Toggle Navbar and Links */
+function toggleNavBar() {
+  menuBar.addEventListener('click', () => {
+    headerNav.classList.toggle('show-menu', checkBox.checked);
+  });
+}
+
+function closeNavBarByLinks(link) {
+  link.addEventListener('click', () => {
+    headerNav.classList.remove('show-menu');
+    checkBox.checked = false;
+  });
+}
 
 /*Links Manipulation and Scrolls */
 function updateActiveLink() {
@@ -49,58 +63,33 @@ function updateSectionOnScroll(link) {
   }
 }
 
-/*Animations's Manipulation */
+/*Form Animation */
 const submitButton = document.querySelector('.send-form-button');
 const formContainer = document.querySelector('.form');
 const BMIInfo = document.querySelector('.bmi-info-container');
-const closeBMIInfo = document.querySelector('.close-bmi-info');
+const closeBMIInfoButton = document.querySelector('.close-bmi-info');
 
-function hideForm() {
+function toggleClassState(element, classListToAdd, classListToRemove) {
+  if (classListToAdd) element.classList.add(classListToAdd);
+  element.classList.remove(classListToRemove);
+}
+
+function toggleFormDisplay() {
+  const isMobileView = window.matchMedia('(max-width: 480px)').matches;
+
   submitButton.addEventListener('click', () => {
-    addClassListOnElement(formContainer, 'hide-form');
+    toggleClassState(formContainer, isMobileView ? 'hide-form-481px' : 'hide-form', null);
+    toggleClassState(BMIInfo, isMobileView ? 'show-bmi-info-481px' : 'show-bmi-info', null);
+  });
+
+  closeBMIInfoButton.addEventListener('click', () => {
+    toggleClassState(formContainer, null, isMobileView ? 'hide-form-481px' : 'hide-form');
+    toggleClassState(BMIInfo, null, isMobileView ? 'show-bmi-info-481px' : 'show-bmi-info');
   });
 }
-
-function displayBMIInfoAfterFormTransition() {
-  formContainer.addEventListener('transitionend', () => {
-    formContainer.classList.contains('hide-form') && addClassListOnElement(BMIInfo, 'show-bmi-info');
-  });
-}
-
-function hideBMIInfo() {
-  closeBMIInfo.addEventListener('click', () => {
-    removeClassListOnElement(BMIInfo, 'show-bmi-info');
-    removeClassListOnElement(formContainer, 'hide-form');
-  });
-}
-
-function addClassListOnElement(element, classList) {
-  element.classList.add(classList);
-}
-
-function removeClassListOnElement(element, classList) {
-  element.classList.remove(classList);
-}
-
-/*Toggle Navbar and Links */
-function toggleNavBar() {
-  menuBar.addEventListener('click', () => {
-    headerNav.classList.toggle('show-menu', checkBox.checked);
-  });
-}
-
-function closeNavBarByLinks(link) {
-  link.addEventListener('click', () => {
-    headerNav.classList.remove('show-menu');
-    checkBox.checked = false;
-  });
-}
-
 
 window.addEventListener('load', aosInit);
 window.addEventListener('load', updateActiveLink);
 document.addEventListener('scroll', updateActiveLink);
 toggleNavBar();
-hideForm();
-hideBMIInfo();
-displayBMIInfoAfterFormTransition();
+toggleFormDisplay();
