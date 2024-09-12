@@ -12,7 +12,7 @@ function initializeForm() {
 }
 
 function validateFormInputs() {
-  const regexForStrings = /^[A-Za-z\s]+$/;
+  const regexForStrings = /^[A-Za-z\sÀ-úÑñ]+$/;
   const onlyNumbers = /^\d+$/;
 
   submitButton.disabled =
