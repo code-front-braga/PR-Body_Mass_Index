@@ -1,6 +1,6 @@
 # 📈 Body Mass Index (BMI)
 
-<img src='./src/assets/images/Project_Print.png' alt='Print do Projeto' />
+<img src='./src/assets/images/projectPrint.png' alt='Print do Projeto' />
 
 ## Sobre o Projeto:
 
