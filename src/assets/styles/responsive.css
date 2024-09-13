@@ -155,7 +155,7 @@
   }
 }
 
-@media (max-width: 768px) and (orientation: landscape) {
+@media (max-width: 768px) and (max-height: 361px) {
   #home-page {
     height: 100vh;
   }
