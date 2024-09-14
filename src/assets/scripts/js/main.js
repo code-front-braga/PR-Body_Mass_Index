@@ -7,6 +7,7 @@ function aosInit() {
     mirror: false,
   });
 }
+aosInit();
 
 /*********************************************************************/
 const headerOffset = 100;
@@ -69,27 +70,22 @@ const formContainer = document.querySelector('.form');
 const BMIInfo = document.querySelector('.bmi-info-container');
 const closeBMIInfoButton = document.querySelector('.close-bmi-info');
 
-function toggleClassState(element, classListToAdd, classListToRemove) {
-  if (classListToAdd) element.classList.add(classListToAdd);
-  element.classList.remove(classListToRemove);
+function checkScreenSize() {
+  return window.matchMedia('(max-width: 480px)').matches;
 }
 
-function toggleFormDisplay() {
-  const isMobileView = window.matchMedia('(max-width: 480px)').matches;
+function toggleFormVisibility(hide) {
+  const isSmallScreen = checkScreenSize(); // Verifica se a tela é menor que 480px
+  const formClass = isSmallScreen ? 'hide-form-480px' : 'hide-form';
+  const bmiClass = isSmallScreen ? 'show-bmi-info-480px' : 'show-bmi-info';
 
-  submitButton.addEventListener('click', () => {
-    toggleClassState(formContainer, isMobileView ? 'hide-form-480px' : 'hide-form', null);
-    toggleClassState(BMIInfo, isMobileView ? 'show-bmi-info-480px' : 'show-bmi-info', null);
-  });
-
-  closeBMIInfoButton.addEventListener('click', () => {
-    toggleClassState(formContainer, null, isMobileView ? 'hide-form-480px' : 'hide-form');
-    toggleClassState(BMIInfo, null, isMobileView ? 'show-bmi-info-480px' : 'show-bmi-info');
-  });
+  formContainer.classList[hide ? 'add' : 'remove'](formClass);
+  BMIInfo.classList[hide ? 'add' : 'remove'](bmiClass);
 }
 
-toggleFormDisplay();
-window.addEventListener('load', aosInit);
+submitButton.addEventListener('click', () => toggleFormVisibility(true));
+closeBMIInfoButton.addEventListener('click', () => toggleFormVisibility(false));
+
 window.addEventListener('load', updateActiveLink);
 document.addEventListener('scroll', updateActiveLink);
 toggleNavBar();
